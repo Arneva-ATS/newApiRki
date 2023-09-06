@@ -8,12 +8,13 @@
         include "config.php";
 
         $sql = mysqli_query($koneksi,"select * from pengguna where token = '".$_GET['token']."'");
+        $row = mysqli_fetch_assoc($sql);
         $check = mysqli_num_rows($sql);
             
             if($check > 0){
 
                 $data = json_decode(file_get_contents("php://input"),true);
-                $insert = mysqli_query($koneksi,"insert into pinjaman(id_user,jumlah_pinjaman,jenis_pinjaman,lama_angsuran,keterangan)values('".$data['id_user']."','".$data['jumlah_pinjaman']."','".$data['jenis_pinjaman']."','".$data['lama_angsuran']."','".$data['keterangan']."')");
+                $insert = mysqli_query($koneksi,"insert into pinjaman(id_user,jumlah_pinjaman,jenis_pinjaman,lama_angsuran,keterangan)values('".$row['id']."','".$data['jumlah_pinjaman']."','".$data['jenis_pinjaman']."','".$data['lama_angsuran']."','".$data['keterangan']."')");
                 if($insert){
                     echo json_encode(
                         array(
