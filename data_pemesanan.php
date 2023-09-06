@@ -12,8 +12,8 @@
     $check = mysqli_num_rows($sql);
     
     if($check > 0){
-
-    $q=mysqli_query($con,"select * from pemesanan where session_id = '".$_GET['id']."'");
+    $sesionid = session_id();
+    $q=mysqli_query($con,"select * from pemesanan where session_id = '".$sesionid."'");
     while ($row=mysqli_fetch_object($q)){
         $data[] = $row;
     }
