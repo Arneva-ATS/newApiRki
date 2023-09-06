@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 05, 2023 at 03:33 PM
+-- Generation Time: Sep 06, 2023 at 02:11 PM
 -- Server version: 5.7.42
 -- PHP Version: 7.4.33
 
@@ -52,7 +52,14 @@ CREATE TABLE IF NOT EXISTS `cart` (
   `id_koperasi` int(11) NOT NULL,
   `jumlah` int(11) NOT NULL DEFAULT '0',
   `session_id` varchar(100) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`id`, `kode_barang`, `nama_barang`, `stok`, `harga`, `photo`, `keterangan`, `id_kategori`, `id_koperasi`, `jumlah`, `session_id`) VALUES
+(19, 'BRG_00001', 'Sampo Lifeboy', 10, 12000, 'https://assets.unileversolutions.com/v1/1634391.png', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 1, 1, 0, '68thtd4nkianhmmdpm25st8bn4');
 
 -- --------------------------------------------------------
 
@@ -158,7 +165,7 @@ CREATE TABLE IF NOT EXISTS `pengguna` (
 
 INSERT INTO `pengguna` (`id`, `username`, `password`, `token`, `status`, `id_koperasi`, `id_toko`) VALUES
 (1, 'koperasi1', '827ccb0eea8a706c4c34a16891f84e7b', 'ba60836c05f74f20a4f27f52c39fe429f736906be1c5f6a90f61d2a2dfec3928e6d9d53dc786813400e9fcac708b66e9a69713682e32a7d9f37a820d', 'koperasi', 0, 0),
-(2, 'anggota1', '827ccb0eea8a706c4c34a16891f84e7b', 'da8d5d2803a947b9f1f7750e621c54de15954f0ad9312d6f6dcb28cb22f4ece70c94beb2dd4b518208bc2174955ce1bededef42963f8275f39828325', 'anggota', 0, 0),
+(2, 'anggota1', '827ccb0eea8a706c4c34a16891f84e7b', '66313d8892744be38b7c1e5730e48bd6a312d1e18ea1e57180ca38358652f3d68fb0598665c4ca454243ca60ac6e277438441121701834e72da62b07', 'anggota', 0, 0),
 (3, 'koperasi2', '827ccb0eea8a706c4c34a16891f84e7b', 'ba60836c05f74f20a4f27f52c39fe429f736906be1c5f6a90f61d2a2dfec3928e6d9d53dc786813400e9fcac708b66e9a69713682e32a7d9f37a820d', 'koperasi', 0, 0),
 (4, 'anggota2', '827ccb0eea8a706c4c34a16891f84e7b', 'da8d5d2803a947b9f1f7750e621c54de15954f0ad9312d6f6dcb28cb22f4ece70c94beb2dd4b518208bc2174955ce1bededef42963f8275f39828325', 'anggota', 0, 0),
 (5, 'rki', '827ccb0eea8a706c4c34a16891f84e7b', 'ba60836c05f74f20a4f27f52c39fe429f736906be1c5f6a90f61d2a2dfec3928e6d9d53dc786813400e9fcac708b66e9a69713682e32a7d9f37a820d', 'rki', 0, 0);
@@ -331,7 +338,7 @@ ALTER TABLE `anggota`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20;
 --
 -- AUTO_INCREMENT for table `jenis_pinjaman`
 --
