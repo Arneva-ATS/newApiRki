@@ -18,6 +18,11 @@ if($_GET['act'] == 'insert_anggota'){
     mysqli_query($koneksi,"insert into pengguna(username,password,token,status,id_koperasi,id_toko)values('".strtolower($_POST['kode_anggota'])."','".md5(12345)."','null','anggota','".$idt."','0')");
     header('location:dashboard.php?menu=anggota');
 
+} if($_GET['act'] == 'insert_simpanan'){
+
+    mysqli_query($koneksi,"insert into simpanan(id_koperasi,kode_anggota,simpanan_pokok,simpanan_wajib,simpanan_sukarela)values('".$_POST['id_koperasi']."','".$_POST['kode_anggota']."','".$_POST['simpanan_pokok']."','".$_POST['simpanan_wajib']."','".$_POST['simpanan_sukarela']."')");
+    header('location:dashboard.php?menu=simpanan');
+
 }
 
 

@@ -14,7 +14,7 @@
                                                             <?php
                                                                 $sql = mysqli_query($koneksi,"select * from koperasi order by id asc");
                                                                 while($data = mysqli_fetch_assoc($sql)){
-                                                                    echo "<option value='".$data['kode_koperasi']."'>".$data['nama_koperasi']."</option>";
+                                                                    echo "<option value='".$data['id']."'>".$data['nama_koperasi']."</option>";
                                                                 }
                                                                 ?>
                                                         </select>

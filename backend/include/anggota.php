@@ -14,7 +14,7 @@
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>
-                                            <th>Kode Koperasi</th>
+                                            <th>Nama Koperasi</th>
                                             <th>Nama Anggota</th>
                                             <th>Kode Anggota</th>
                                             <th>Email</th>
@@ -24,7 +24,7 @@
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>Kode Koperasi</th>
+                                            <th>Nama Koperasi</th>
                                             <th>Nama Anggota</th>
                                             <th>Kode Anggota</th>
                                             <th>Email</th>
@@ -38,7 +38,7 @@
                                         while($data = mysqli_fetch_assoc($sql)){
                                     ?>
                                         <tr>
-                                            <td> <?php echo $data['id_koperasi'];?> </td>
+                                            <td> <?php echo convert_koperasi($data['id_koperasi']);?> </td>
                                             <td> <?php echo $data['nama_anggota'];?> </td>
                                             <td> <?php echo $data['kode_anggota'];?> </td>
                                             <td> <?php echo $data['email'];?> </td>

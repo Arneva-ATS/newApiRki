@@ -13,4 +13,12 @@ $data = mysqli_fetch_array($sql);
 return $data['nama_jenis_pinjaman']??"";
 }
 
+function convert_koperasi($id){
+    include "config.php";
+    $sql = mysqli_query($koneksi,"select * from  koperasi where id = '".$id."'");
+    $data = mysqli_fetch_array($sql);
+    return $data['nama_koperasi']??"";
+    }
+
+
 ?>
