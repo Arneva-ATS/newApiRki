@@ -1,4 +1,7 @@
 <?php
+
+include "function.php";
+
 if($_GET['menu'] == ''){
     include "include/main.php";
 }
@@ -27,8 +30,12 @@ if($_GET['menu'] == 'edit_koperasi'){
     include "include/edit_koperasi.php";
 }
 
-if($_GET['menu'] == ''){
+if($_GET['menu'] == 'simpanan'){
     include "include/simpanan.php";
+}
+
+if($_GET['menu'] == 'histori_simpanan'){
+    include "include/histori_simpanan.php";
 }
 
 if($_GET['menu'] == 'tambah_simpanan'){

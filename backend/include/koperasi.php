@@ -20,6 +20,7 @@
                                             <th>Alamat</th>
                                             <th>Maps</th>
                                             <th>Telphon</th>
+                                            <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
@@ -30,6 +31,7 @@
                                             <th>Alamat</th>
                                             <th>Maps</th>
                                             <th>Telphon</th>
+                                            <th>Aksi</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
@@ -44,6 +46,7 @@
                                             <td> <?php echo $data['alamat'];?> </td>
                                             <td> <?php echo $data['maps'];?> </td>
                                             <td> <?php echo $data['telphon'];?> </td>
+                                            <td> <a href="aksi.php?act=hapus_koperasi&id=<?php echo $data['id'];?>" class="btn btn-danger" onclick="return confirm('Yakin Mau Hapus ??')"> Hapus </a> </td>
                                         </tr>
                                       <?php } ?>
                                     </tbody>

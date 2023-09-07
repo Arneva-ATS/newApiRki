@@ -27,18 +27,19 @@
                             </a>
                             <div class="collapse" id="collapseSimpin" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="?menu=data_simpanan">Data Simpanan</a>
+                                    <a class="nav-link" href="?menu=simpanan">Data Simpanan</a>
+                                    <a class="nav-link" href="?menu=histori_simpanan">Histori Simpanan</a>
                                 </nav>
                             </div>
 
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePinjaman" aria-expanded="false" aria-controls="collapsePinjaman">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                    Simpanan
+                                    Pinjaman
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
                             <div class="collapse" id="collapsePinjaman" aria-labelledby="headingThree" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="?menu=data_pinjaman">Data Pinjaman</a>
+                                    <a class="nav-link" href="?menu=pinjaman">Data Pinjaman</a>
                                 </nav>
                             </div>
 
