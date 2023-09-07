@@ -13,7 +13,7 @@
             
             if($check > 0){
                 
-                $sql2 = mysqli_query($koneksi,"select * from simpanan where id_user = '".$row['kode_user']."'  order by id asc");
+                $sql2 = mysqli_query($koneksi,"select * from simpanan where id_user = '".$row['id']."'  order by id asc");
                 $data = mysqli_fetch_assoc($sql2);
                 $row = $data;
 
