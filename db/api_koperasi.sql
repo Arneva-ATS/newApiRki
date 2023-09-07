@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 06, 2023 at 02:11 PM
+-- Generation Time: Sep 07, 2023 at 03:05 AM
 -- Server version: 5.7.42
 -- PHP Version: 7.4.33
 
@@ -165,7 +165,7 @@ CREATE TABLE IF NOT EXISTS `pengguna` (
 
 INSERT INTO `pengguna` (`id`, `username`, `password`, `token`, `status`, `id_koperasi`, `id_toko`) VALUES
 (1, 'koperasi1', '827ccb0eea8a706c4c34a16891f84e7b', 'ba60836c05f74f20a4f27f52c39fe429f736906be1c5f6a90f61d2a2dfec3928e6d9d53dc786813400e9fcac708b66e9a69713682e32a7d9f37a820d', 'koperasi', 0, 0),
-(2, 'anggota1', '827ccb0eea8a706c4c34a16891f84e7b', '66313d8892744be38b7c1e5730e48bd6a312d1e18ea1e57180ca38358652f3d68fb0598665c4ca454243ca60ac6e277438441121701834e72da62b07', 'anggota', 0, 0),
+(2, 'anggota1', '827ccb0eea8a706c4c34a16891f84e7b', '35ba28d7b750493ed44633322e2ad1e45a6cadfaad5438cc32a0b94d7c08f21da4e2b44a69586dfbccd3cae62a5e9ad42a822538425469ec675ff8e7', 'anggota', 0, 0),
 (3, 'koperasi2', '827ccb0eea8a706c4c34a16891f84e7b', 'ba60836c05f74f20a4f27f52c39fe429f736906be1c5f6a90f61d2a2dfec3928e6d9d53dc786813400e9fcac708b66e9a69713682e32a7d9f37a820d', 'koperasi', 0, 0),
 (4, 'anggota2', '827ccb0eea8a706c4c34a16891f84e7b', 'da8d5d2803a947b9f1f7750e621c54de15954f0ad9312d6f6dcb28cb22f4ece70c94beb2dd4b518208bc2174955ce1bededef42963f8275f39828325', 'anggota', 0, 0),
 (5, 'rki', '827ccb0eea8a706c4c34a16891f84e7b', 'ba60836c05f74f20a4f27f52c39fe429f736906be1c5f6a90f61d2a2dfec3928e6d9d53dc786813400e9fcac708b66e9a69713682e32a7d9f37a820d', 'rki', 0, 0);
@@ -223,6 +223,29 @@ INSERT INTO `pos` (`id`, `kode_barang`, `nama_barang`, `stok`, `harga`, `photo`,
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `riwayat_simpanan`
+--
+
+CREATE TABLE IF NOT EXISTS `riwayat_simpanan` (
+  `id` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL,
+  `simpanan_pokok` int(11) NOT NULL,
+  `simpanan_wajib` int(11) NOT NULL,
+  `simpanan_sukarela` int(11) NOT NULL,
+  `created_at` date NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `riwayat_simpanan`
+--
+
+INSERT INTO `riwayat_simpanan` (`id`, `id_user`, `simpanan_pokok`, `simpanan_wajib`, `simpanan_sukarela`, `created_at`) VALUES
+(1, 2, 500000, 1000000, 400000, '2023-09-07'),
+(2, 2, 100000, 1000000, 500000, '2023-09-08');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `simpanan`
 --
 
@@ -231,8 +254,16 @@ CREATE TABLE IF NOT EXISTS `simpanan` (
   `id_user` int(11) NOT NULL,
   `simpanan_pokok` int(11) NOT NULL,
   `simpanan_wajib` int(11) NOT NULL,
-  `simpanan_sukarela` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `simpanan_sukarela` int(11) NOT NULL,
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `simpanan`
+--
+
+INSERT INTO `simpanan` (`id`, `id_user`, `simpanan_pokok`, `simpanan_wajib`, `simpanan_sukarela`, `created_at`) VALUES
+(1, 2, 500000, 1000000, 400000, '2023-09-07 02:46:23');
 
 -- --------------------------------------------------------
 
@@ -314,6 +345,12 @@ ALTER TABLE `pos`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `riwayat_simpanan`
+--
+ALTER TABLE `riwayat_simpanan`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `simpanan`
 --
 ALTER TABLE `simpanan`
@@ -380,10 +417,15 @@ ALTER TABLE `pinjaman`
 ALTER TABLE `pos`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
+-- AUTO_INCREMENT for table `riwayat_simpanan`
+--
+ALTER TABLE `riwayat_simpanan`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+--
 -- AUTO_INCREMENT for table `simpanan`
 --
 ALTER TABLE `simpanan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `toko`
 --
