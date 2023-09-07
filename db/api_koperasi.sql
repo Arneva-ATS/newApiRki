@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 07, 2023 at 07:40 AM
+-- Generation Time: Sep 07, 2023 at 12:43 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -41,7 +41,8 @@ CREATE TABLE `anggota` (
 --
 
 INSERT INTO `anggota` (`id`, `id_koperasi`, `nama_anggota`, `kode_anggota`, `email`, `telphon`) VALUES
-(2, 'kop_pgs', 'ali', 'agg_0001', 'ali@gmail.com', '0834563458345');
+(2, '3', 'ali', 'agg_0001', 'ali@gmail.com', '0834563458345'),
+(3, '3', 'dika', 'agg_0002', 'andika@gmail.com', '050349758754');
 
 -- --------------------------------------------------------
 
@@ -190,11 +191,12 @@ CREATE TABLE `pengguna` (
 --
 
 INSERT INTO `pengguna` (`id`, `username`, `password`, `token`, `status`, `id_koperasi`, `id_toko`) VALUES
-(2, 'anggota1', '827ccb0eea8a706c4c34a16891f84e7b', '35ba28d7b750493ed44633322e2ad1e45a6cadfaad5438cc32a0b94d7c08f21da4e2b44a69586dfbccd3cae62a5e9ad42a822538425469ec675ff8e7', 'anggota', 0, 0),
+(2, 'anggota1', '827ccb0eea8a706c4c34a16891f84e7b', '35ba28d7b750493ed44633322e2ad1e45a6cadfaad5438cc32a0b94d7c08f21da4e2b44a69586dfbccd3cae62a5e9ad42a822538425469ec675ff8e7', 'anggota', 2, 0),
 (4, 'anggota2', '827ccb0eea8a706c4c34a16891f84e7b', 'da8d5d2803a947b9f1f7750e621c54de15954f0ad9312d6f6dcb28cb22f4ece70c94beb2dd4b518208bc2174955ce1bededef42963f8275f39828325', 'anggota', 0, 0),
 (5, 'rki', '827ccb0eea8a706c4c34a16891f84e7b', 'ba60836c05f74f20a4f27f52c39fe429f736906be1c5f6a90f61d2a2dfec3928e6d9d53dc786813400e9fcac708b66e9a69713682e32a7d9f37a820d', 'rki', 0, 0),
 (7, 'kop_pgs', '827ccb0eea8a706c4c34a16891f84e7b', 'null', 'koperasi', 3, 0),
-(9, 'agg_0001', '827ccb0eea8a706c4c34a16891f84e7b', 'null', 'anggota', 2, 0);
+(9, 'agg_0001', '827ccb0eea8a706c4c34a16891f84e7b', 'null', 'anggota', 2, 0),
+(10, 'agg_0002', '827ccb0eea8a706c4c34a16891f84e7b', 'null', 'anggota', 3, 0);
 
 -- --------------------------------------------------------
 
@@ -279,7 +281,8 @@ INSERT INTO `riwayat_simpanan` (`id`, `id_user`, `simpanan_pokok`, `simpanan_waj
 
 CREATE TABLE `simpanan` (
   `id` int(11) NOT NULL,
-  `id_user` int(11) NOT NULL,
+  `id_koperasi` varchar(100) NOT NULL,
+  `kode_anggota` varchar(100) NOT NULL,
   `simpanan_pokok` int(11) NOT NULL,
   `simpanan_wajib` int(11) NOT NULL,
   `simpanan_sukarela` int(11) NOT NULL,
@@ -290,8 +293,8 @@ CREATE TABLE `simpanan` (
 -- Dumping data for table `simpanan`
 --
 
-INSERT INTO `simpanan` (`id`, `id_user`, `simpanan_pokok`, `simpanan_wajib`, `simpanan_sukarela`, `created_at`) VALUES
-(1, 2, 500000, 1000000, 400000, '2023-09-07 02:46:23');
+INSERT INTO `simpanan` (`id`, `id_koperasi`, `kode_anggota`, `simpanan_pokok`, `simpanan_wajib`, `simpanan_sukarela`, `created_at`) VALUES
+(4, '3', 'agg_0002', 30000, 50000, 1000, '2023-09-07 16:17:19');
 
 -- --------------------------------------------------------
 
@@ -398,7 +401,7 @@ ALTER TABLE `toko`
 -- AUTO_INCREMENT for table `anggota`
 --
 ALTER TABLE `anggota`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `cart`
@@ -440,7 +443,7 @@ ALTER TABLE `pemesanan`
 -- AUTO_INCREMENT for table `pengguna`
 --
 ALTER TABLE `pengguna`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `pinjaman`
@@ -464,7 +467,7 @@ ALTER TABLE `riwayat_simpanan`
 -- AUTO_INCREMENT for table `simpanan`
 --
 ALTER TABLE `simpanan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `toko`
