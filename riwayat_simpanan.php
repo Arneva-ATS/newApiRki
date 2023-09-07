@@ -13,7 +13,7 @@
             
             if($check > 0){
                 $row = array();
-                $sql2 = mysqli_query($koneksi,"select * from riwayat_simpanan where id_user = '".$row['id']."'  order by id asc");
+                $sql2 = mysqli_query($koneksi,"select * from riwayat_simpanan where id_user = '2'  order by id asc");
                 
                 while($data = mysqli_fetch_assoc($sql2)){
                     $row[] = $data;
