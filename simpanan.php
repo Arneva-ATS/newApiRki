@@ -8,12 +8,12 @@
         include "config.php";
 
             $sql = mysqli_query($koneksi,"select * from pengguna where token = '".$_GET['token']."'");
-            $row = mysqli_fetch_assoc($sql);
+            $rows = mysqli_fetch_assoc($sql);
             $check = mysqli_num_rows($sql);
             
             if($check > 0){
                 
-                $sql2 = mysqli_query($koneksi,"select * from simpanan where id_user = '".$row['id']."'  order by id asc");
+                $sql2 = mysqli_query($koneksi,"select * from simpanan where id_user = '".$rows['id']."'  order by id asc");
                 $data = mysqli_fetch_assoc($sql2);
                 $row = $data;
 
