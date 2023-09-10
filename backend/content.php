@@ -54,4 +54,8 @@ if($_GET['menu'] == 'histori_peminjaman'){
     include "include/histori_pinjaman.php";
 }
 
+if($_GET['menu'] == 'barang'){
+    include "include/barang.php";
+}
+
 ?>

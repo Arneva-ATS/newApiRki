@@ -11,15 +11,15 @@
                                     Dashboard
                                 </a>
                                 <div class="sb-sidenav-menu-heading">Interface</div>
-                                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                                    <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                                    Masters
+                              
+                                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseBarang" aria-expanded="false" aria-controls="collapseBarang">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                        Barang
                                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                                 </a>
-                                <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <div class="collapse" id="collapseBarang" aria-labelledby="headingThree" data-bs-parent="#sidenavAccordion">
                                     <nav class="sb-sidenav-menu-nested nav">
-                                        <a class="nav-link" href="?menu=anggota">Anggota</a>
-                                        <a class="nav-link" href="?menu=koperasi">Koperasi</a>
+                                        <a class="nav-link" href="?menu=barang">Barang</a>
                                     </nav>
                                 </div>
 
@@ -31,7 +31,6 @@
                                 <div class="collapse" id="collapseSimpin" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                                     <nav class="sb-sidenav-menu-nested nav">
                                         <a class="nav-link" href="?menu=simpanan">Data Simpanan</a>
-                                        <a class="nav-link" href="?menu=histori_simpanan">Histori Simpanan</a>
                                     </nav>
                                 </div>
 
@@ -43,7 +42,6 @@
                                 <div class="collapse" id="collapsePinjaman" aria-labelledby="headingThree" data-bs-parent="#sidenavAccordion">
                                     <nav class="sb-sidenav-menu-nested nav">
                                         <a class="nav-link" href="?menu=pinjaman">Data Pinjaman</a>
-                                        <a class="nav-link" href="?menu=histori_peminjaman">Histori Pinjaman</a>
                                     </nav>
                                 </div>
                             </div>

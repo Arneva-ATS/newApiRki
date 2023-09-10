@@ -54,4 +54,9 @@ if($_GET['act'] == 'hapus_riwayat_pinjaman'){
     header('location:dashboard.php?menu=histori_peminjaman');
 }
 
+
+if($_GET['act'] == 'hapus_riwayat_simpanan'){
+    mysqli_query($koneksi,"delete from riwayat_simpanan where id = '".$_GET['id']."'");
+    header('location:dashboard.php?menu=histori_simpanan');
+}
 ?>
