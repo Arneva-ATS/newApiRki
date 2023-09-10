@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 07, 2023 at 12:43 PM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 7.4.29
+-- Generation Time: Sep 10, 2023 at 05:02 PM
+-- Server version: 10.4.25-MariaDB
+-- PHP Version: 7.4.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -41,8 +41,7 @@ CREATE TABLE `anggota` (
 --
 
 INSERT INTO `anggota` (`id`, `id_koperasi`, `nama_anggota`, `kode_anggota`, `email`, `telphon`) VALUES
-(2, '3', 'ali', 'agg_0001', 'ali@gmail.com', '0834563458345'),
-(3, '3', 'dika', 'agg_0002', 'andika@gmail.com', '050349758754');
+(8, '3', 'Muhammad Rifqi', '20230910152303', 'muhammad45rifki@gmail.com', '081927067602');
 
 -- --------------------------------------------------------
 
@@ -132,7 +131,8 @@ CREATE TABLE `koperasi` (
 --
 
 INSERT INTO `koperasi` (`id`, `kode_koperasi`, `nama_koperasi`, `email`, `alamat`, `maps`, `telphon`) VALUES
-(3, 'kop_pgs', 'Koperasi Pegangsaan', 'pgs@newrkiapp.com', 'jakarta', '-6.200000,106.816666', '0834563458345');
+(3, 'kop_pgs', 'Koperasi Pegangsaan', 'pgs@newrkiapp.com', 'jakarta', '-6.200000,106.816666', '0834563458345'),
+(4, 'kop_graha_kas', 'Koperasi Graha Kas', 'graha_123@gmail.com', 'Kebayoran Baru Jakarta Selatan', '-6.200000,106.816666', '081927067602');
 
 -- --------------------------------------------------------
 
@@ -191,12 +191,10 @@ CREATE TABLE `pengguna` (
 --
 
 INSERT INTO `pengguna` (`id`, `username`, `password`, `token`, `status`, `id_koperasi`, `id_toko`) VALUES
-(2, 'anggota1', '827ccb0eea8a706c4c34a16891f84e7b', '35ba28d7b750493ed44633322e2ad1e45a6cadfaad5438cc32a0b94d7c08f21da4e2b44a69586dfbccd3cae62a5e9ad42a822538425469ec675ff8e7', 'anggota', 2, 0),
-(4, 'anggota2', '827ccb0eea8a706c4c34a16891f84e7b', 'da8d5d2803a947b9f1f7750e621c54de15954f0ad9312d6f6dcb28cb22f4ece70c94beb2dd4b518208bc2174955ce1bededef42963f8275f39828325', 'anggota', 0, 0),
 (5, 'rki', '827ccb0eea8a706c4c34a16891f84e7b', 'ba60836c05f74f20a4f27f52c39fe429f736906be1c5f6a90f61d2a2dfec3928e6d9d53dc786813400e9fcac708b66e9a69713682e32a7d9f37a820d', 'rki', 0, 0),
-(7, 'kop_pgs', '827ccb0eea8a706c4c34a16891f84e7b', 'null', 'koperasi', 3, 0),
-(9, 'agg_0001', '827ccb0eea8a706c4c34a16891f84e7b', 'null', 'anggota', 2, 0),
-(10, 'agg_0002', '827ccb0eea8a706c4c34a16891f84e7b', 'null', 'anggota', 3, 0);
+(7, 'kop_pgs', '827ccb0eea8a706c4c34a16891f84e7b', 'f47ec7e79896ce69764ace557947d3d50f94a191c3dbc6e34e23fb4473957c9e9420b0e9076baf59c2329e7f12d82d1f4f52b20eff67f2fff6a619cc', 'koperasi', 3, 0),
+(15, '081927067602', '827ccb0eea8a706c4c34a16891f84e7b', '71f2337492f8e00699941e4bba1ff01469f6d28e0226008ffe3a6fd440a2d155ba3274920f04e106cdadad87edf62fb195e695139c71905e7f2101fe', 'anggota', 3, 0),
+(16, 'kop_graha_kas', '827ccb0eea8a706c4c34a16891f84e7b', 'null', 'koperasi', 4, 0);
 
 -- --------------------------------------------------------
 
@@ -220,7 +218,7 @@ CREATE TABLE `pinjaman` (
 --
 
 INSERT INTO `pinjaman` (`id`, `id_user`, `jumlah_pinjaman`, `jenis_pinjaman`, `lama_angsuran`, `keterangan`, `tanggal`, `approve`) VALUES
-(3, 2, 500000, 1, 3, 'sample keterangan', '2023-09-07 12:33:00', 'ditolak');
+(3, 15, 500000, 1, 3, 'sample keterangan', '2023-09-07 12:33:00', 'diterima');
 
 -- --------------------------------------------------------
 
@@ -237,18 +235,36 @@ CREATE TABLE `pos` (
   `photo` varchar(255) NOT NULL,
   `keterangan` text NOT NULL,
   `id_kategori` int(11) NOT NULL,
-  `id_koperasi` int(11) NOT NULL
+  `id_koperasi` int(11) NOT NULL,
+  `flag` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `pos`
 --
 
-INSERT INTO `pos` (`id`, `kode_barang`, `nama_barang`, `stok`, `harga`, `photo`, `keterangan`, `id_kategori`, `id_koperasi`) VALUES
-(1, 'BRG_00001', 'Sampo Lifeboy', 10, 12000, 'https://assets.unileversolutions.com/v1/1634391.png', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 1, 1),
-(2, 'BRG_00002', 'Bumbu Kuning', 10, 15000, 'https://images.tokopedia.net/img/cache/700/VqbcmM/2021/4/21/27228094-0c16-408f-bca6-ca64cbc6d8d4.jpg', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 2, 1),
-(3, 'BRG_00003', 'Sikat Gigi', 10, 12000, 'https://res.cloudinary.com/dk0z4ums3/image/upload/v1681963247/attached_image/cara-memilih-dan-merawat-sikat-gigi-0-alodokter.jpg', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 1, 1),
-(4, 'BRG_00002', 'Garam Dapur', 10, 15000, 'https://id-test-11.slatic.net/p/874c730548c61897f5f55a47f88fadb8.jpg', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 2, 1);
+INSERT INTO `pos` (`id`, `kode_barang`, `nama_barang`, `stok`, `harga`, `photo`, `keterangan`, `id_kategori`, `id_koperasi`, `flag`) VALUES
+(1, 'BRG_00001', 'Sampo Lifeboy', 10, 12000, 'https://assets.unileversolutions.com/v1/1634391.png', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 1, 3, ''),
+(2, 'BRG_00002', 'Bumbu Kuning', 10, 15000, 'https://images.tokopedia.net/img/cache/700/VqbcmM/2021/4/21/27228094-0c16-408f-bca6-ca64cbc6d8d4.jpg', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 2, 3, ''),
+(3, 'BRG_00003', 'Sikat Gigi', 10, 12000, 'https://res.cloudinary.com/dk0z4ums3/image/upload/v1681963247/attached_image/cara-memilih-dan-merawat-sikat-gigi-0-alodokter.jpg', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 1, 4, ''),
+(4, 'BRG_00002', 'Garam Dapur', 10, 15000, 'https://id-test-11.slatic.net/p/874c730548c61897f5f55a47f88fadb8.jpg', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 2, 4, '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `riwayat_pinjaman`
+--
+
+CREATE TABLE `riwayat_pinjaman` (
+  `id` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL,
+  `jumlah_pinjaman` int(11) NOT NULL,
+  `jenis_pinjaman` int(11) NOT NULL,
+  `lama_angsuran` int(11) NOT NULL,
+  `keterangan` text NOT NULL,
+  `tanggal` datetime NOT NULL DEFAULT current_timestamp(),
+  `approve` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -259,19 +275,20 @@ INSERT INTO `pos` (`id`, `kode_barang`, `nama_barang`, `stok`, `harga`, `photo`,
 CREATE TABLE `riwayat_simpanan` (
   `id` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
+  `id_koperasi` varchar(100) NOT NULL,
+  `kode_anggota` varchar(100) NOT NULL,
   `simpanan_pokok` int(11) NOT NULL,
   `simpanan_wajib` int(11) NOT NULL,
   `simpanan_sukarela` int(11) NOT NULL,
-  `created_at` date NOT NULL
+  `created_at` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `riwayat_simpanan`
 --
 
-INSERT INTO `riwayat_simpanan` (`id`, `id_user`, `simpanan_pokok`, `simpanan_wajib`, `simpanan_sukarela`, `created_at`) VALUES
-(1, 2, 500000, 1000000, 400000, '2023-09-07'),
-(2, 2, 100000, 1000000, 500000, '2023-09-08');
+INSERT INTO `riwayat_simpanan` (`id`, `id_user`, `id_koperasi`, `kode_anggota`, `simpanan_pokok`, `simpanan_wajib`, `simpanan_sukarela`, `created_at`) VALUES
+(7, 15, '3', '20230910152303', 3000000, 200000, 230000, '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -281,6 +298,7 @@ INSERT INTO `riwayat_simpanan` (`id`, `id_user`, `simpanan_pokok`, `simpanan_waj
 
 CREATE TABLE `simpanan` (
   `id` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL,
   `id_koperasi` varchar(100) NOT NULL,
   `kode_anggota` varchar(100) NOT NULL,
   `simpanan_pokok` int(11) NOT NULL,
@@ -293,8 +311,8 @@ CREATE TABLE `simpanan` (
 -- Dumping data for table `simpanan`
 --
 
-INSERT INTO `simpanan` (`id`, `id_koperasi`, `kode_anggota`, `simpanan_pokok`, `simpanan_wajib`, `simpanan_sukarela`, `created_at`) VALUES
-(4, '3', 'agg_0002', 30000, 50000, 1000, '2023-09-07 16:17:19');
+INSERT INTO `simpanan` (`id`, `id_user`, `id_koperasi`, `kode_anggota`, `simpanan_pokok`, `simpanan_wajib`, `simpanan_sukarela`, `created_at`) VALUES
+(10, 15, '3', '20230910152303', 3000000, 200000, 230000, '2023-09-10 20:34:31');
 
 -- --------------------------------------------------------
 
@@ -376,6 +394,12 @@ ALTER TABLE `pos`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `riwayat_pinjaman`
+--
+ALTER TABLE `riwayat_pinjaman`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `riwayat_simpanan`
 --
 ALTER TABLE `riwayat_simpanan`
@@ -401,7 +425,7 @@ ALTER TABLE `toko`
 -- AUTO_INCREMENT for table `anggota`
 --
 ALTER TABLE `anggota`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `cart`
@@ -425,7 +449,7 @@ ALTER TABLE `kategori`
 -- AUTO_INCREMENT for table `koperasi`
 --
 ALTER TABLE `koperasi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `pembayaran_pinjaman`
@@ -443,13 +467,13 @@ ALTER TABLE `pemesanan`
 -- AUTO_INCREMENT for table `pengguna`
 --
 ALTER TABLE `pengguna`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `pinjaman`
 --
 ALTER TABLE `pinjaman`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `pos`
@@ -458,16 +482,22 @@ ALTER TABLE `pos`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT for table `riwayat_pinjaman`
+--
+ALTER TABLE `riwayat_pinjaman`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
 -- AUTO_INCREMENT for table `riwayat_simpanan`
 --
 ALTER TABLE `riwayat_simpanan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `simpanan`
 --
 ALTER TABLE `simpanan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `toko`
