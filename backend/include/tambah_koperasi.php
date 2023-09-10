@@ -9,7 +9,7 @@
                                             <div class="row mb-3">
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputKodeKoperasi" type="text" name="kode_koperasi" placeholder="Enter Kode Koperasi" />
+                                                        <input class="form-control" id="inputKodeKoperasi" type="text" name="kode_koperasi" value="kop_" placeholder="Enter Kode Koperasi" />
                                                         <label for="inputKodeKoperasi">Kode Koperasi</label>
                                                     </div>
                                                 </div>

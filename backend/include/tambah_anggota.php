@@ -9,6 +9,7 @@
                                             <div class="row mb-3">
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
+                                                        <?php if($_SESSION['status'] == 'rki'){ ?>
                                                         <select class="form-control" id="inputKodeKoperasi" type="text" name="kode_koperasi" placeholder="Enter Kode Koperasi" >
                                                             <option value='00'> Pilih Koperasi </option>
                                                             <?php
@@ -19,6 +20,11 @@
                                                                 ?>
                                                         </select>
                                                         <label for="inputKodeKoperasi">Kode Koperasi</label>
+                                                        <?php }else{ ?>
+                                                            <input type="hidden" type="text" name="kode_koperasi" value="<?php echo $_SESSION['id_koperasi'];?>"> 
+                                                            <input type="text" class="form-control" id="inputKodeKoperasi" type="text" value="<?php echo convert_koperasi($_SESSION['id_koperasi']);?>" disabled>
+                                                            <label for="inputKodeKoperasi">Koperasi</label>
+                                                        <?php } ?>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
@@ -31,7 +37,7 @@
                                             <div class="row mb-3">
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputKodeAnggota" type="text" name="kode_anggota" placeholder="Enter Kode Anggota" />
+                                                        <input class="form-control" id="inputKodeAnggota" type="text" name="kode_anggota" value="<?php echo date("YmdHis");?>" placeholder="Enter Kode Anggota" />
                                                         <label for="inputKodeAnggota"> Kode Anggota </label>
                                                     </div>
                                                 </div>

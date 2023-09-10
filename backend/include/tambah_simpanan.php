@@ -14,7 +14,6 @@
                                                         <select class="form-control" id="inputKodeAnggota" type="text" name="kode_anggota" placeholder="Enter Kode Anggota">
                                                             <option value="00">Pilih Anggota </option>
                                                             <?php
-                                                              
                                                                 $sql = mysqli_query($koneksi,"select * from anggota where  id_koperasi = '".$_SESSION['id_koperasi']."'");
                                                                 while($data = mysqli_fetch_assoc($sql)){
                                                                     echo "<option value='".$data['kode_anggota']."'>".$data['nama_anggota']."</option>";

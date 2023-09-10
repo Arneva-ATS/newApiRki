@@ -50,4 +50,8 @@ if($_GET['menu'] == 'pinjaman'){
     include "include/pinjaman.php";
 }
 
+if($_GET['menu'] == 'histori_peminjaman'){
+    include "include/histori_pinjaman.php";
+}
+
 ?>

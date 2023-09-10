@@ -14,7 +14,8 @@
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>
-                                            <th>Username</th>
+                                            <th>Koperasi</th>
+                                            <th>Anggota</th>
                                             <th>Simpanan Pokok</th>
                                             <th>Simpanan Wajib</th>
                                             <th>Simpanan Sukarela</th>
@@ -24,7 +25,8 @@
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>Username</th>
+                                            <th>Koperasi</th>
+                                            <th>Anggota</th>
                                             <th>Simpanan Pokok</th>
                                             <th>Simpanan Wajib</th>
                                             <th>Simpanan Sukarela</th>
@@ -38,7 +40,8 @@
                                         while($data = mysqli_fetch_assoc($sql)){
                                     ?>
                                         <tr>
-                                            <td> <?php echo convert_user($data['id_user']);?> </td>
+                                            <td> <?php echo convert_koperasi($data['id_koperasi']);?> </td>
+                                            <td> <?php echo $data['kode_anggota'];?> </td>
                                             <td> <?php echo number_format($data['simpanan_pokok']);?> </td>
                                             <td> <?php echo number_format($data['simpanan_wajib']);?> </td>
                                             <td> <?php echo number_format($data['simpanan_sukarela']);?> </td>
