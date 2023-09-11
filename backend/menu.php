@@ -99,6 +99,7 @@
                                 <div class="collapse" id="collapseBarang" aria-labelledby="headingThree" data-bs-parent="#sidenavAccordion">
                                     <nav class="sb-sidenav-menu-nested nav">
                                         <a class="nav-link" href="?menu=barang">Barang</a>
+                                        <a class="nav-link" href="?menu=kategori_barang">Kategori Barang</a>
                                     </nav>
                                 </div>
 

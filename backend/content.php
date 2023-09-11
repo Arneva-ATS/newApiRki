@@ -62,6 +62,10 @@ if($_GET['menu'] == 'tambah_barang'){
     include "include/tambah_barang.php";
 }
 
+if($_GET['menu'] == 'kategori_barang'){
+    include "include/kategori_barang.php";
+}
+
 if($_GET['menu'] == 'view_detail_pinjaman'){
     include "include/cicilan.php";
 }

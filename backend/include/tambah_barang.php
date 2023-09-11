@@ -32,13 +32,13 @@
                                             <div class="row mb-3">
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputStok" type="text" name="stok" placeholder="Enter Stok" />
+                                                        <input class="form-control" id="inputStok" type="number" name="stok" placeholder="Enter Stok" />
                                                         <label for="inputStok"> Stok </label>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-floating">
-                                                        <input class="form-control" id="inputHarga" type="text" name="harga" placeholder="Enter Harga" />
+                                                        <input class="form-control" id="inputHarga" type="number" name="harga" placeholder="Enter Harga" />
                                                         <label for="inputHarga">Harga</label>
                                                     </div>
                                                 </div>

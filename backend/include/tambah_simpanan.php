@@ -28,13 +28,13 @@
                                             <div class="row mb-3">
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputSimjib" type="text" name="simpanan_wajib" placeholder="Enter Simpanan Wajib" />
+                                                        <input class="form-control" id="inputSimjib" type="number" name="simpanan_wajib" placeholder="Enter Simpanan Wajib" />
                                                         <label for="inputSimjib"> Simpanan Wajib </label>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-floating">
-                                                        <input class="form-control" id="inputSimkok" type="text" name="simpanan_pokok" placeholder="Enter Simpanan Pokok" />
+                                                        <input class="form-control" id="inputSimkok" type="number" name="simpanan_pokok" placeholder="Enter Simpanan Pokok" />
                                                         <label for="inputSimkok">Simpanan Pokok</label>
                                                     </div>
                                                 </div>
@@ -42,7 +42,7 @@
                                             <div class="row mb-3">
                                                 <div class="col-md-12">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputSimla" type="text" name="simpanan_sukarela" placeholder="Enter Simpanan Sukarela" />
+                                                        <input class="form-control" id="inputSimla" type="number" name="simpanan_sukarela" placeholder="Enter Simpanan Sukarela" />
                                                         <label for="inputSimla">Simpanan Sukarela</label>
                                                     </div>
                                                 </div>

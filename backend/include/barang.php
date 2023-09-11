@@ -76,12 +76,12 @@
                             $sql = mysqli_query($koneksi,"select * from pos where id_koperasi = '".$_SESSION['id_koperasi']."' order by id desc");
                             while($data = mysqli_fetch_assoc($sql)){
                             ?>
-                            <div class="col-xl-4 col-md-6">
-                            <div class="card" style="width: 18rem;">
+                            <div class="col-xl-3 col-md-6">
+                            <div class="card" style="width: 12rem;">
                                 <img class="card-img-top" src="<?php echo $data['photo'];?>" alt="<?php echo $data['nama_barang'];?>">
                                 <div class="card-body">
                                     <h5 class="card-title"><?php echo $data['nama_barang'];?></h5>
-                                    <p class="card-text"><?php echo substr($data['keterangan'],0,100);?>....</p>
+                                    <p class="card-text"><?php echo substr($data['keterangan'],0,50);?>....</p>
                                     <a href="#" class="btn btn-warning">Update</a>
                                 </div>
                                 </div>
