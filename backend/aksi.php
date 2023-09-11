@@ -81,7 +81,8 @@ if($_GET['act'] == 'insert_barang'){
     } if($_SESSION['status'] == 'rki'){
 
         $temp = explode(".", $_FILES["photo"]["name"]);
-        $nama_file = round(microtime(true)) . '.' . end($temp);
+        $nf = round(microtime(true));
+        $nama_file = $nf.'.'.end($temp);
         $lokasi_file = $_FILES['photo']['tmp_name'];
 
         if(!empty($lokasi_file)){
