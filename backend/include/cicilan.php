@@ -4,7 +4,7 @@
                     $potong = substr($data['tanggal'],0,10);
                     $tgl = explode("-",$potong);
                     $tempo = mktime(0, 0, 0, date($tgl[1])+$data['lama_angsuran'], date($tgl[2]), date($tgl[0]));
-                    $bulanan = ceil($data['jumlah_pinjaman']/$data['lama_angsuran']);
+                    $bulanan = floor($data['jumlah_pinjaman']/$data['lama_angsuran']);
                     $format_ok =  number_format($bulanan,0,",",".");
                 ?>
 
@@ -20,8 +20,8 @@
                                 <i class="fas fa-table me-1"></i>
                                     Detail Pinjaman : 
                             </div>
-                                <h3> Jatuh Tempo: <?php echo $tempo; ?> </h3>
-                                <h3> Bulanan : <?php echo $format_ok; ?> </h3>
+                                <h3> Jatuh Tempo: <?php echo date('Y-m-d',$tempo); ?> </h3>
+                                <h3> Bayar Bulanan : Rp.<?php echo $format_ok; ?> </h3>
 
                             <div class="card-body">
                                 <table id="datatablesSimple">
