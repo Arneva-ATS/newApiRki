@@ -5,8 +5,8 @@
                     $tgl = explode("-",$potong);
                     $tempo = mktime(0, 0, 0, date($tgl[1])+$data['lama_angsuran'], date($tgl[2]), date($tgl[0]));
                     $bulanan = ceil($data['jumlah_pinjaman']/$data['lama_angsuran']);
+                    $format_ok =  number_format($bulanan,0,",",".");
                 ?>
-
 
                 <main>
                     <div class="container-fluid px-4">
@@ -21,7 +21,7 @@
                                     Detail Pinjaman : 
                             </div>
                                 <h3> Jatuh Tempo: <?php echo $tempo; ?> </h3>
-                                <h3> Bulanan : <?php echo $bulanan; ?> </h3>
+                                <h3> Bulanan : <?php echo $format_ok; ?> </h3>
 
                             <div class="card-body">
                                 <table id="datatablesSimple">
