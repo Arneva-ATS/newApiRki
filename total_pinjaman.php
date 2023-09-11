@@ -12,7 +12,7 @@
             $check = mysqli_num_rows($sql);
             
             if($check > 0){
-                $sql2 = mysqli_query($koneksi,"select * from pinjaman where id_user = '".$rows['id']."'  order by id desc limit 1");
+                $sql2 = mysqli_query($koneksi,"select * from pinjaman where id_user = '".$rows['id']."' and approve = ''diterima' order by id desc limit 1");
                 $data = mysqli_fetch_assoc($sql2);
 
                 echo json_encode(
