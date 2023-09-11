@@ -59,4 +59,43 @@ if($_GET['act'] == 'hapus_riwayat_simpanan'){
     mysqli_query($koneksi,"delete from riwayat_simpanan where id = '".$_GET['id']."'");
     header('location:dashboard.php?menu=histori_simpanan');
 }
+
+
+if($_GET['act'] == 'insert_barang'){
+    
+    if($_SESSION['status'] == 'koperasi'){
+
+        $temp = explode(".", $_FILES["photo"]["name"]);
+        $nama_file = round(microtime(true)) . '.' . end($temp);
+        $lokasi_file = $_FILES['photo']['tmp_name'];
+
+        if(!empty($lokasi_file)){
+            move_uploaded_file($lokasi_file,"barang/".$nama_file);
+            $url = $url_live.'/backend/barang/'.$nama_file;
+            mysqli_query($koneksi,"insert into pos(kode_barang,nama_barang,stok,harga,photo,keterangan,id_kategori,id_koperasi,flag)values('".$_POST['kode_barang']."','".$_POST['nama_barang']."','".$_POST['stok']."','".$_POST['harga']."','".$url."','".$_POST['keterangan']."','".$_POST['id_kategori']."','".$_POST['id_koperasi']."','null')");
+            header('location:dashboard.php?menu=barang');
+        }else{
+            header('location:dashboard.php?menu=barang');
+        }
+
+    } if($_SESSION['status'] == 'rki'){
+
+        $temp = explode(".", $_FILES["photo"]["name"]);
+        $nama_file = round(microtime(true)) . '.' . end($temp);
+        $lokasi_file = $_FILES['photo']['tmp_name'];
+
+        if(!empty($lokasi_file)){
+            move_uploaded_file($lokasi_file,"barang/".$nama_file);
+            $url = $url_live.'/backend/barang/'.$nama_file;
+            mysqli_query($koneksi,"insert into pos(kode_barang,nama_barang,stok,harga,photo,keterangan,id_kategori,id_koperasi,flag)values('".$_POST['kode_barang']."','".$_POST['nama_barang']."','".$_POST['stok']."','".$_POST['harga']."','".$url."','".$_POST['keterangan']."','".$_POST['id_kategori']."','".$_POST['id_koperasi']."','rki')");
+            header('location:dashboard.php?menu=barang');
+        }else{
+            header('location:dashboard.php?menu=barang');
+        }
+
+
+    }
+
+
+}
 ?>

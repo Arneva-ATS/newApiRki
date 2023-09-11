@@ -58,4 +58,7 @@ if($_GET['menu'] == 'barang'){
     include "include/barang.php";
 }
 
+if($_GET['menu'] == 'tambah_barang'){
+    include "include/tambah_barang.php";
+}
 ?>
