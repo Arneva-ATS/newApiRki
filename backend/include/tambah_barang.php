@@ -93,6 +93,11 @@
 
                 <?php        
                     }  if($_SESSION['status'] == 'rki'){
+
+                    $a = mysqli_query($koneksi, "SELECT max(id) as kode FROM pos");
+                    $b = mysqli_fetch_array($a);
+                    $nopin = $b['kode'] + 1;
+                    $hasil = sprintf("%05s", $nopin);
                 ?>
 
 
