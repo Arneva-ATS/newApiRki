@@ -39,7 +39,7 @@
                                             </div>
                                             <div class="row mb-3">
                                                 <div class="col-md-6">
-                                                    <p><img src="<?php echo $data['photo'];?>"></p>
+                                                    <p><img src="<?php echo $data['photo'];?>" width="150"></p>
                                                     <div class="form-floating mb-3 mb-md-0">
                                                         <input class="form-control" id="inputPhoto" type="file" name="photo" placeholder="Enter Photo" />
                                                         <label for="inputPhoto">Photo</label>
