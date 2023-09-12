@@ -16,7 +16,7 @@
     if($check > 0){
         $data = array();
         $sesionid = session_id();
-        $q=mysqli_query($koneksi,"select * from cart where session_id = '".$sesionid."'");
+        $q=mysqli_query($koneksi,"select * from cart where session_id = '2j1vff8d7ni2ss8biu6f5rephi'");
         while ($row=mysqli_fetch_object($q)){
             $data[] = $row;
         }
