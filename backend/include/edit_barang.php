@@ -47,7 +47,7 @@
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputKeterangan" type="text" name="keterangan" <?php echo $data['keterangan']; ?> placeholder="Keterangan" />
+                                                        <input class="form-control" id="inputKeterangan" type="text" name="keterangan" <?php echo $data['keterangan']; ?> placeholder="Keterangan" style="height:150px" />
                                                         <label for="inputKeterangan"> Keterangan </label>
                                                     </div>
                                                 </div>
