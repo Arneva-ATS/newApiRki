@@ -14,13 +14,13 @@
     $check = mysqli_num_rows($sql);
     
     if($check > 0){
-    $data = array();
-    $sesionid = session_id();
-    $q=mysqli_query($con,"select * from cart where session_id = '".$sesionid."'");
-    while ($row=mysqli_fetch_object($q)){
-        $data[] = $sesionid;
-    }
-    echo json_encode($data);
+        $data = array();
+        $sesionid = session_id();
+        $q=mysqli_query($con,"select * from cart where session_id = '2j1vff8d7ni2ss8biu6f5rephi'");
+        while ($row=mysqli_fetch_object($q)){
+            $data[] = $sesionid;
+        }
+        echo json_encode($data);
 
     }else{
 
