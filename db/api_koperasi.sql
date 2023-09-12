@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 11, 2023 at 09:24 AM
+-- Generation Time: Sep 12, 2023 at 07:54 AM
 -- Server version: 5.7.42
 -- PHP Version: 7.4.33
 
@@ -61,15 +61,17 @@ CREATE TABLE IF NOT EXISTS `cart` (
   `id_kategori` int(11) NOT NULL,
   `id_koperasi` int(11) NOT NULL,
   `jumlah` int(11) NOT NULL DEFAULT '0',
-  `session_id` varchar(100) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4;
+  `session_id` varchar(100) NOT NULL,
+  `id_user` int(11) DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `cart`
 --
 
-INSERT INTO `cart` (`id`, `kode_barang`, `nama_barang`, `stok`, `harga`, `photo`, `keterangan`, `id_kategori`, `id_koperasi`, `jumlah`, `session_id`) VALUES
-(19, 'BRG_00001', 'Sampo Lifeboy', 10, 12000, 'https://assets.unileversolutions.com/v1/1634391.png', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 1, 3, 0, '68thtd4nkianhmmdpm25st8bn4');
+INSERT INTO `cart` (`id`, `kode_barang`, `nama_barang`, `stok`, `harga`, `photo`, `keterangan`, `id_kategori`, `id_koperasi`, `jumlah`, `session_id`, `id_user`) VALUES
+(29, 'BRG_00001', 'Sampo Lifeboy', 10, 12000, 'https://assets.unileversolutions.com/v1/1634391.png', 'asdasdasdasd', 1, 1, 0, '047rvlk16tbgu2pco62vrlvl72', 0),
+(30, 'BRG_00002', 'Bumbu Kuning', 10, 15000, 'https://www.sarimunik.com/wp-content/uploads/2018/09/bumbu-dasar-kuning.jpg', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 1, 3, 0, '2j1vff8d7ni2ss8biu6f5rephi', NULL);
 
 -- --------------------------------------------------------
 
@@ -101,7 +103,7 @@ CREATE TABLE IF NOT EXISTS `kategori` (
   `id` int(11) NOT NULL,
   `kode_kategori` varchar(100) NOT NULL,
   `nama_kategori` varchar(100) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `kategori`
@@ -181,6 +183,7 @@ CREATE TABLE IF NOT EXISTS `pemesanan` (
 CREATE TABLE IF NOT EXISTS `pengguna` (
   `id` int(11) NOT NULL,
   `username` varchar(100) NOT NULL,
+  `nama` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
   `token` varchar(255) NOT NULL,
   `status` enum('rki','koperasi','anggota') NOT NULL DEFAULT 'anggota',
@@ -192,14 +195,14 @@ CREATE TABLE IF NOT EXISTS `pengguna` (
 -- Dumping data for table `pengguna`
 --
 
-INSERT INTO `pengguna` (`id`, `username`, `password`, `token`, `status`, `id_koperasi`, `id_toko`) VALUES
-(5, 'rki', '827ccb0eea8a706c4c34a16891f84e7b', 'ba60836c05f74f20a4f27f52c39fe429f736906be1c5f6a90f61d2a2dfec3928e6d9d53dc786813400e9fcac708b66e9a69713682e32a7d9f37a820d', 'rki', 0, 0),
-(7, 'kop_pgs', '827ccb0eea8a706c4c34a16891f84e7b', 'f47ec7e79896ce69764ace557947d3d50f94a191c3dbc6e34e23fb4473957c9e9420b0e9076baf59c2329e7f12d82d1f4f52b20eff67f2fff6a619cc', 'koperasi', 3, 0),
-(15, '081927067602', '827ccb0eea8a706c4c34a16891f84e7b', '873f888ace28a6d76c87c900c0633362f5e7fe8980968b636f0b92da32a59e40c71845dada4d11063ff9e4403ed4c5ead8606e39e12b6cc5be952ce2', 'anggota', 3, 0),
-(16, 'kop_graha_kas', '827ccb0eea8a706c4c34a16891f84e7b', 'null', 'koperasi', 4, 0),
-(17, '082124240977', '827ccb0eea8a706c4c34a16891f84e7b', 'f3c96ed37c56a55b7f852433d2920491565805a548647f30a80e6208b619ed96b9414a085371060b1c92d8287ef98d61effe3c5bac8e912680baa865', 'anggota', 3, 0),
-(18, 'kop_111', '827ccb0eea8a706c4c34a16891f84e7b', 'null', 'koperasi', 5, 0),
-(19, '08123456789', '827ccb0eea8a706c4c34a16891f84e7b', 'null', 'anggota', 3, 0);
+INSERT INTO `pengguna` (`id`, `username`, `nama`, `password`, `token`, `status`, `id_koperasi`, `id_toko`) VALUES
+(5, 'rki', 'RKI', '827ccb0eea8a706c4c34a16891f84e7b', 'ba60836c05f74f20a4f27f52c39fe429f736906be1c5f6a90f61d2a2dfec3928e6d9d53dc786813400e9fcac708b66e9a69713682e32a7d9f37a820d', 'rki', 0, 0),
+(7, 'kop_pgs', 'KOP PGS', '827ccb0eea8a706c4c34a16891f84e7b', 'f47ec7e79896ce69764ace557947d3d50f94a191c3dbc6e34e23fb4473957c9e9420b0e9076baf59c2329e7f12d82d1f4f52b20eff67f2fff6a619cc', 'koperasi', 3, 0),
+(15, '081927067602', 'Rifqi', '827ccb0eea8a706c4c34a16891f84e7b', 'ee52c7aece3dee72c7926c2e2c7c350e8ee90fa24491af4478de44ab97bafa07ab32fbaf95cf18148592f6dd920e503efd1b9b7ba5b5f8084939a74d', 'anggota', 3, 0),
+(16, 'kop_graha_kas', 'KOP GRAHA KAS', '827ccb0eea8a706c4c34a16891f84e7b', 'null', 'koperasi', 4, 0),
+(17, '082124240977', 'ALI', '827ccb0eea8a706c4c34a16891f84e7b', '5c4ea7531566043f176a4a1ffd688c09fc5a0130ed0442f0517b958f281e78fbbe67727ed52f86379db04b7588435875065352f6951c5f93880c9e89', 'anggota', 3, 0),
+(18, 'kop_111', 'KOP 111', '827ccb0eea8a706c4c34a16891f84e7b', 'null', 'koperasi', 5, 0),
+(19, '08123456789', 'DIKA', '827ccb0eea8a706c4c34a16891f84e7b', 'null', 'anggota', 3, 0);
 
 -- --------------------------------------------------------
 
@@ -227,7 +230,7 @@ INSERT INTO `pinjaman` (`id`, `id_user`, `jumlah_pinjaman`, `jenis_pinjaman`, `l
 (6, 17, 1000000, 2, 3, 'coba apapun', '2023-09-11 03:24:28', 'diterima'),
 (7, 17, 1000000, 2, 3, 'test', '2023-09-11 04:36:03', 'diterima'),
 (8, 17, 1000000, 2, 3, 'dika minjem duit buat nikah', '2023-09-11 04:36:34', 'diterima'),
-(9, 17, 500000, 2, 3, 'test 2', '2023-09-11 04:40:59', 'ditolak');
+(9, 17, 500000, 2, 3, 'test 2', '2023-09-11 04:40:59', 'diterima');
 
 -- --------------------------------------------------------
 
@@ -276,7 +279,7 @@ CREATE TABLE IF NOT EXISTS `riwayat_pinjaman` (
   `keterangan` text NOT NULL,
   `tanggal` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `approve` varchar(100) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `riwayat_pinjaman`
@@ -286,7 +289,8 @@ INSERT INTO `riwayat_pinjaman` (`id`, `id_user`, `jumlah_pinjaman`, `jenis_pinja
 (10, 17, 1000000, 2, 3, 'dika minjem duit buat nikah', '2023-09-11 04:42:55', 'diterima'),
 (11, 17, 1000000, 2, 3, 'test', '2023-09-11 04:43:01', 'diterima'),
 (12, 15, 500000, 1, 3, 'sample keterangan', '2023-09-11 04:43:08', 'diterima'),
-(13, 17, 1000000, 2, 3, 'coba apapun', '2023-09-11 04:43:11', 'diterima');
+(13, 17, 1000000, 2, 3, 'coba apapun', '2023-09-11 04:43:11', 'diterima'),
+(14, 17, 500000, 2, 3, 'test 2', '2023-09-11 09:35:03', 'diterima');
 
 -- --------------------------------------------------------
 
@@ -455,7 +459,7 @@ ALTER TABLE `anggota`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=31;
 --
 -- AUTO_INCREMENT for table `jenis_pinjaman`
 --
@@ -465,7 +469,7 @@ ALTER TABLE `jenis_pinjaman`
 -- AUTO_INCREMENT for table `kategori`
 --
 ALTER TABLE `kategori`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `koperasi`
 --
@@ -500,7 +504,7 @@ ALTER TABLE `pos`
 -- AUTO_INCREMENT for table `riwayat_pinjaman`
 --
 ALTER TABLE `riwayat_pinjaman`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT for table `riwayat_simpanan`
 --
