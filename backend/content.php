@@ -77,4 +77,12 @@ if($_GET['menu'] == 'edit_barang'){
 if($_GET['menu'] == 'view_detail_pinjaman'){
     include "include/cicilan.php";
 }
+
+if($_GET['menu'] == 'toko'){
+    include "include/toko.php";
+}
+
+if($_GET['menu'] == 'tambah_toko'){
+    include "include/tambah_toko.php";
+}
 ?>
