@@ -38,22 +38,22 @@
                                                 </div>
                                             </div>
                                             <div class="row mb-3">
-                                                <div class="col-md-6">
+                                                <div class="col-md-12">
                                                     <p><img src="<?php echo $data['photo'];?>" width="150"></p>
                                                     <div class="form-floating mb-3 mb-md-0">
                                                         <input class="form-control" id="inputPhoto" type="file" name="photo" placeholder="Enter Photo" />
                                                         <label for="inputPhoto">Photo</label>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-6">
+                                            </div>
+                                            <div class="row mb-3">
+                                                <div class="col-md-4">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputKeterangan" type="text" name="keterangan" <?php echo $data['keterangan']; ?> placeholder="Keterangan" style="height:150px" />
+                                                        <input class="form-control" id="inputKeterangan" type="text" name="keterangan" <?php echo $data['keterangan']; ?> placeholder="Keterangan" />
                                                         <label for="inputKeterangan"> Keterangan </label>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="row mb-3">
-                                                <div class="col-md-6">
+                                                <div class="col-md-4">
                                                     <div class="form-floating mb-3 mb-md-0">
                                                         <select class="form-control" id="inputKategori" type="text" name="id_kategori" placeholder="Id Kategori" >
                                                             <option value="00"> Pilih Kategori</option>
@@ -67,7 +67,7 @@
                                                         <label for="inputKategori"> Kategori </label>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-6">
+                                                <div class="col-md-4">
                                                     <div class="form-floating mb-3 mb-md-0">
                                                         <input class="form-control" id="inputIDKoperasi" type="text" name="id_koperasi" value="<?php echo $data['id_koperasi'];?>" placeholder="Enter ID Koperasi" />
                                                         <label for="inputIDKoperasi">ID Koperasi</label>
