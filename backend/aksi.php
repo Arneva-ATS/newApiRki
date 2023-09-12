@@ -110,7 +110,7 @@ if($_GET['act'] == 'hapus_kategori_barang'){
     header('location:dashboard.php?menu=kategori_barang');
 }
 
-if($_GET['act'] == 'insert_kategori'){
+if($_GET['act'] == 'insert_kategori_barang'){
 
     mysqli_query($koneksi,"insert into kategori(kode_kategori,nama_kategori)values('".$_POST['kode_kategori']."','".$_POST['nama_kategori']."')");
     header('location:dashboard.php?menu=kategori_barang');
