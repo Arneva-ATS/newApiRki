@@ -13,9 +13,11 @@
                                 <i class="fas fa-table me-1"></i>
                                     Data Barang | <a href="?menu=tambah_barang"> Tambah Barang </a>
                             </div>
-                            <div class="alert-danger">
+                            <?php if($_GET['message'] == 'error') { ?>
+                            <div class="alert alert-danger" role="alert">
                                 Gambar Anda Mungkin Terlalu Besar / terlalu Kecil 
                             </div>
+                            <?php } ?>
                             <div class="card-body">
                                 <table id="datatablesSimple">
                                     <thead>
