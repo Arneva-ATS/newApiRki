@@ -13,6 +13,9 @@
                                 <i class="fas fa-table me-1"></i>
                                     Data Barang | <a href="?menu=tambah_barang"> Tambah Barang </a>
                             </div>
+                            <div class="alert-danger">
+                                Gambar Anda Mungkin Terlalu Besar / terlalu Kecil 
+                            </div>
                             <div class="card-body">
                                 <table id="datatablesSimple">
                                     <thead>

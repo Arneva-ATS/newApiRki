@@ -6,7 +6,7 @@ if($_GET['act'] == 'insert_koperasi'){
 
     mysqli_query($koneksi,"insert into koperasi(kode_koperasi,nama_koperasi,email,alamat,maps,telphon)values('".strtolower($_POST['kode_koperasi'])."','".$_POST['nama_koperasi']."','".$_POST['email']."','".$_POST['alamat']."','".$_POST['maps']."','".$_POST['telphon']."')");
     $idt = mysqli_insert_id($koneksi);
-    mysqli_query($koneksi,"insert into pengguna(username,password,token,status,id_koperasi,id_toko)values('".strtolower($_POST['kode_koperasi'])."','".md5(12345)."','null','koperasi','".$idt."','0')");
+    mysqli_query($koneksi,"insert into pengguna(username,nama,password,token,status,id_koperasi,id_toko)values('".strtolower($_POST['kode_koperasi'])."','".$_POST['nama_koperasi']."','".md5(12345)."','null','koperasi','".$idt."','0')");
     header('location:dashboard.php?menu=koperasi');
 
 }
@@ -15,7 +15,7 @@ if($_GET['act'] == 'insert_anggota'){
 
     mysqli_query($koneksi,"insert into anggota(id_koperasi,kode_anggota,nama_anggota,email,telphon)values('".strtolower($_POST['kode_koperasi'])."','".$_POST['kode_anggota']."','".$_POST['nama_anggota']."','".$_POST['email']."','".$_POST['telphon']."')");
     $idt = mysqli_insert_id($koneksi);
-    mysqli_query($koneksi,"insert into pengguna(username,password,token,status,id_koperasi,id_toko)values('".$_POST['telphon']."','".md5(12345)."','null','anggota','".strtolower($_POST['kode_koperasi'])."','0')");
+    mysqli_query($koneksi,"insert into pengguna(username,nama,password,token,status,id_koperasi,id_toko)values('".$_POST['telphon']."','".$_POST['nama_anggota']."','".md5(12345)."','null','anggota','".strtolower($_POST['kode_koperasi'])."','0')");
     header('location:dashboard.php?menu=anggota');
 
 } if($_GET['act'] == 'insert_simpanan'){
@@ -69,14 +69,18 @@ if($_GET['act'] == 'insert_barang'){
         $nf = round(microtime(true));
         $nama_file = $nf.'.'.end($temp);
         $lokasi_file = $_FILES['photo']['tmp_name'];
-
-        if(!empty($lokasi_file)){
-            move_uploaded_file($lokasi_file,"barang/".$nama_file);
-            $url = $url_live.'/backend/barang/'.$nama_file;
-            mysqli_query($koneksi,"insert into pos(kode_barang,nama_barang,stok,harga,photo,keterangan,id_kategori,id_koperasi,flag)values('".$_POST['kode_barang']."','".$_POST['nama_barang']."','".$_POST['stok']."','".$_POST['harga']."','".$url."','".$_POST['keterangan']."','".$_POST['id_kategori']."','".$_POST['id_koperasi']."','null')");
-            header('location:dashboard.php?menu=barang');
+        $size_file = $_FILES['photo']['size'];
+        if($size_file > 40000 && $size_file < 500000){
+            if(!empty($lokasi_file)){
+                move_uploaded_file($lokasi_file,"barang/".$nama_file);
+                $url = $url_live.'/backend/barang/'.$nama_file;
+                mysqli_query($koneksi,"insert into pos(kode_barang,nama_barang,stok,harga,photo,keterangan,id_kategori,id_koperasi,flag)values('".$_POST['kode_barang']."','".$_POST['nama_barang']."','".$_POST['stok']."','".$_POST['harga']."','".$url."','".$_POST['keterangan']."','".$_POST['id_kategori']."','".$_POST['id_koperasi']."','null')");
+                header('location:dashboard.php?menu=barang');
+            }else{
+                header('location:dashboard.php?menu=barang');
+            }
         }else{
-            header('location:dashboard.php?menu=barang');
+            header('location:dashboard.php?menu=barang&message=error');
         }
 
     } if($_SESSION['status'] == 'rki'){
@@ -97,7 +101,6 @@ if($_GET['act'] == 'insert_barang'){
 
 
     }
-
 
 }
 ?>
