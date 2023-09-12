@@ -55,7 +55,7 @@
                                             <td> <img src="<?php echo $data['photo'];?>" width="100"/> </td>
                                             <td> <?php echo convert_jenis_kategori($data['id_kategori']);?> </td>
                                             <td>
-                                                <a href="aksi.php?act=edit_barang&id=<?php echo $data['id'];?>" class="btn btn-warning"> Edit </a> 
+                                                <a href="?menu=edit_barang&id=<?php echo $data['id'];?>" class="btn btn-warning"> Edit </a> 
                                                 <a href="aksi.php?act=hapus_barang&id=<?php echo $data['id'];?>" class="btn btn-danger" onclick="return confirm('Yakin Mau Hapus ??')"> Hapus </a> 
                                             </td>
                                         </tr>
