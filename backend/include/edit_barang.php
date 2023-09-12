@@ -5,7 +5,7 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
-                                    <div class="card-header"><h3 class="text-left font-weight-light my-4">Tambah Barang</h3></div>
+                                    <div class="card-header"><h3 class="text-left font-weight-light my-4">Update Barang</h3></div>
                                     <div class="card-body">
                                         <form method="POST" action="aksi.php?act=update_barang" enctype="multipart/form-data">
                                             <input type="hidden" name="id" value="<?php echo $data['id']; ?>">
