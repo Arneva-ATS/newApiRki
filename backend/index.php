@@ -18,7 +18,7 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-5">
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
-                                    <div class="card-header bg-info text-center"> <img src="assets/img/logo.png" /> </div>
+                                    <div class="card-header bg-info text-center"> <img src="assets/img/Logo.png" /> </div>
                                     <div class="card-body">
                                         <form method="POST" action="cek_login.php">
                                             <div class="form-floating mb-3">
