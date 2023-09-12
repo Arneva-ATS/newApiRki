@@ -64,6 +64,7 @@
                                 <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                     <nav class="sb-sidenav-menu-nested nav">
                                         <a class="nav-link" href="?menu=anggota">Anggota</a>
+                                        <a class="nav-link" href="?menu=toko">Toko</a>
                                     </nav>
                                 </div>
 
@@ -76,6 +77,7 @@
                                     <nav class="sb-sidenav-menu-nested nav">
                                         <a class="nav-link" href="?menu=simpanan">Data Simpanan</a>
                                         <a class="nav-link" href="?menu=histori_simpanan">Histori Simpanan</a>
+                                        <a class="nav-link" href="?menu=summari_simpanan">Summari Simpanan</a>
                                     </nav>
                                 </div>
 
@@ -88,6 +90,7 @@
                                     <nav class="sb-sidenav-menu-nested nav">
                                         <a class="nav-link" href="?menu=pinjaman">Data Pinjaman</a>
                                         <a class="nav-link" href="?menu=histori_peminjaman">Histori Pinjaman</a>
+                                        <a class="nav-link" href="?menu=summari_pinjaman">Summari Pinjaman</a>
                                     </nav>
                                 </div>
 
