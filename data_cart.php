@@ -17,7 +17,7 @@
     $sesionid = session_id();
     $q=mysqli_query($con,"select * from cart where session_id = '".$sesionid."'");
     while ($row=mysqli_fetch_object($q)){
-        $data[] = $row;
+        $data[] = $sesionid;
     }
     echo json_encode($data);
 
