@@ -117,5 +117,10 @@ if($_GET['act'] == 'insert_kategori_barang'){
 
 }
 
+if($_GET['act'] == 'insert_toko'){
 
+    mysqli_query($koneksi,"insert into toko(kode_toko,nama_toko,email,alamat,id_koperasi)values('".$_POST['kode_toko']."','".$_POST['nama_toko']."','".$_POST['email']."','".$_POST['alamat']."','".$_POST['id_koperasi']."')");
+    header('location:dashboard.php?menu=toko');
+
+}
 ?>
