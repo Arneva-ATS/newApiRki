@@ -16,7 +16,7 @@
                                             <div class="row mb-3">
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputKodeKategori" type="text" name="kode_kategori" value="<?php echo $hasil;?>" placeholder="Enter Kode Kategori" />
+                                                        <input class="form-control" id="inputKodeKategori" type="text" name="kode_kategori" value="KD_<?php echo $hasil;?>" placeholder="Enter Kode Kategori" />
                                                         <label for="inputKodeKategori">Kode Kategori</label>
                                                     </div>
                                                 </div>
