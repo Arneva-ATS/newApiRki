@@ -103,6 +103,49 @@ if($_GET['act'] == 'insert_barang'){
 }
 
 
+if($_GET['act'] == 'update_barang'){
+    
+    if($_SESSION['status'] == 'koperasi'){
+
+        $temp = explode(".", $_FILES["photo"]["name"]);
+        $nf = round(microtime(true));
+        $nama_file = $nf.'.'.end($temp);
+        $lokasi_file = $_FILES['photo']['tmp_name'];
+        $size_file = $_FILES['photo']['size'];
+        if($size_file > 40000 && $size_file < 500000){
+            if(!empty($lokasi_file)){
+                move_uploaded_file($lokasi_file,"barang/".$nama_file);
+                $url = $url_live.'/backend/barang/'.$nama_file;
+                mysqli_query($koneksi,"update pos set kode_barang='".$_POST['kode_barang']."',nama_barang='".$_POST['nama_barang']."',stok='".$_POST['stok']."',harga='".$_POST['harga']."',photo='".$url."',keterangan='".$_POST['keterangan']."',id_kategori='".$_POST['id_kategori']."',id_koperasi='".$_POST['id_koperasi']."',flag='null' where id = '".$_POST['id']."'");
+                header('location:dashboard.php?menu=barang');
+            }else{
+                mysqli_query($koneksi,"update pos set kode_barang='".$_POST['kode_barang']."',nama_barang='".$_POST['nama_barang']."',stok='".$_POST['stok']."',harga='".$_POST['harga']."',keterangan='".$_POST['keterangan']."',id_kategori='".$_POST['id_kategori']."',id_koperasi='".$_POST['id_koperasi']."',flag='null' where id = '".$_POST['id']."'");
+                header('location:dashboard.php?menu=barang');
+            }
+        }else{
+            header('location:dashboard.php?menu=barang&message=error');
+        }
+
+    } if($_SESSION['status'] == 'rki'){
+
+        $temp = explode(".", $_FILES["photo"]["name"]);
+        $nf = round(microtime(true));
+        $nama_file = $nf.'.'.end($temp);
+        $lokasi_file = $_FILES['photo']['tmp_name'];
+
+        if(!empty($lokasi_file)){
+            move_uploaded_file($lokasi_file,"barang/".$nama_file);
+            $url = $url_live.'/backend/barang/'.$nama_file;
+            mysqli_query($koneksi,"update pos set kode_barang='".$_POST['kode_barang']."',nama_barang='".$_POST['nama_barang']."',stok='".$_POST['stok']."',harga='".$_POST['harga']."',photo='".$url."',keterangan='".$_POST['keterangan']."',id_kategori='".$_POST['id_kategori']."',id_koperasi='1',flag='rki' where id = '".$_POST['id']."'");
+            header('location:dashboard.php?menu=barang');
+        }else{
+            header('location:dashboard.php?menu=barang');
+        }
+    }
+
+}
+
+
 if($_GET['act'] == 'hapus_kategori_barang'){
     mysqli_query($koneksi,"delete from kategori where id = '".$_GET['id']."'");
     header('location:dashboard.php?menu=kategori_barang');
