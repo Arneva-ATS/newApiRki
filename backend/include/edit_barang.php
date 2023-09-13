@@ -58,10 +58,21 @@
                                                         <select class="form-control" id="inputKategori" type="text" name="id_kategori" placeholder="Id Kategori" >
                                                             <option value="00"> Pilih Kategori</option>
                                                             <?php 
-                                                                $sql = mysqli_query($koneksi,"select * from kategori");
-                                                                while($data = mysqli_fetch_array($sql)){
-                                                             ?>
-                                                            <option value="<?php echo $data['id'];?>"> <?php echo $data['nama_kategori'];?> </option>
+                                                                $rrr = mysqli_query($koneksi,"select * from kategori");
+                                                                while($ddd = mysqli_fetch_array($rrr)){
+                                                                    if($ddd == $data['id_kategori']){
+                                                                            ?>
+                                                                                <option value="<?php echo $ddd['id'];?>" selected> <?php echo $ddd['nama_kategori'];?> </option>
+                                                                            <?php 
+                                                                            }
+                                                                                else
+                                                                            {
+                                                                            ?>
+                                                                                <option value="<?php echo $ddd['id'];?>"> <?php echo $ddd['nama_kategori'];?> </option>
+                                                                            <?php    
+                                                                            }
+                                                                            ?>
+                                                        
                                                             <?php } ?>
                                                         </select>
                                                         <label for="inputKategori"> Kategori </label>
