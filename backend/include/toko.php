@@ -44,7 +44,7 @@
                                             <td> <?php echo $data['nama_toko'];?> </td>
                                             <td> <?php echo $data['email'];?> </td>
                                             <td> <?php echo $data['alamat'];?> </td>
-                                            <td> <?php echo $data['id_user'];?> </td>
+                                            <td> <?php echo convert_koperasi($data['id_koperasi']);?> </td>
                                             <td> <a href="aksi.php?act=hapus_toko&id=<?php echo $data['id'];?>" class="btn btn-danger" onclick="return confirm('Yakin Mau Hapus ??')"> Hapus </a> </td>
                                         </tr>
                                       <?php } ?>
