@@ -12,7 +12,7 @@
                 $data = json_decode(file_get_contents("php://input"),true);
                 $sesionid = session_id();
                 $cleartag = str_replace("'"," ", $data['keterangan']);
-                $qqq = mysqli_query($koneksi,"select * from cart where nama_barang = '".$data['nama_barang']."'");
+                $qqq = mysqli_query($koneksi,"select * from cart where kode_barang = '".$data['kode_barang']."'");
                 if(mysqli_num_rows($qqq) > 0) {
                     echo json_encode(
                         array(
