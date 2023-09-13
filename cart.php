@@ -1,15 +1,11 @@
-<?php
-
+        <?php
         session_start();
-
         header("Access-Control-Allow-Origin: *");
 		header("Access-Control-Allow-Credentials: true");
 		header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
 		header("Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With");
         header("Content-Type: application/json; charset=utf-8");
-        
         include "config.php";
-
         $sql = mysqli_query($koneksi,"select * from pengguna where token = '".$_GET['token']."'");
         $check = mysqli_num_rows($sql);            
             if($check > 0){
@@ -20,7 +16,7 @@
                 if(mysqli_num_rows($qqq) > 0) {
                     echo json_encode(
                         array(
-                            'response_code' => 200,
+                            'response_code' => 301,
                             'message' => 'Data Sudah Ada Di cart, Silahkan Melakukan Update di Menu Cart'
                         )
                     );
@@ -40,7 +36,7 @@
                         }else{
                             echo json_encode(
                                 array(
-                                    'response_code' => 200,
+                                    'response_code' => 400,
                                     'message' => 'Failed',
                                     'data' => null
                                 )
@@ -50,7 +46,7 @@
             }else{
                 echo json_encode(
                     array(
-                        'response_code' => 401,
+                        'response_code' => 400,
                         'message' => 'Gagal Mengambil Data!'
                     )
                     );
