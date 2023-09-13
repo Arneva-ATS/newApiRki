@@ -12,7 +12,7 @@
                                             <div class="row mb-3">
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputKodeKoperasi" type="text" name="kode_barang" value="<?php echo $data['id']; ?>" placeholder="Enter Kode Koperasi" />
+                                                        <input class="form-control" id="inputKodeKoperasi" type="text" name="kode_barang" value="<?php echo $data['kode_barang']; ?>" placeholder="Enter Kode Koperasi" />
                                                         <label for="inputKodeKoperasi">Kode Barang</label>
                                                     </div>
                                                 </div>
@@ -39,7 +39,7 @@
                                             </div>
                                             <div class="row mb-3">
                                                 <div class="col-md-12">
-                                                    <p><img src="<?php echo $data['photo'];?>" width="150"></p>
+                                                    <p><img src="<?php echo $data['photo'];?>" width="250"></p>
                                                     <div class="form-floating mb-3 mb-md-0">
                                                         <input class="form-control" id="inputPhoto" type="file" name="photo" placeholder="Enter Photo" />
                                                         <label for="inputPhoto">Photo</label>
