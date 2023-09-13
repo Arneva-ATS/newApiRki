@@ -1,3 +1,10 @@
+                <?php
+                    $a = mysqli_query($koneksi, "SELECT max(id) as kode FROM kategori");
+                    $b = mysqli_fetch_array($a);
+                    $nopin = $b['kode'] + 1;
+                    $hasil = sprintf("%06s", $nopin);
+                ?>       
+
                 <main>
                     <div class="container">
                         <div class="row">
@@ -9,7 +16,7 @@
                                             <div class="row mb-3">
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputKodeKategori" type="text" name="kode_kategori" value="" placeholder="Enter Kode Kategori" />
+                                                        <input class="form-control" id="inputKodeKategori" type="text" name="kode_kategori" value="<?php echo $hasil;?>" placeholder="Enter Kode Kategori" />
                                                         <label for="inputKodeKategori">Kode Kategori</label>
                                                     </div>
                                                 </div>
