@@ -89,6 +89,7 @@
                                 <div class="collapse" id="collapsePinjaman" aria-labelledby="headingThree" data-bs-parent="#sidenavAccordion">
                                     <nav class="sb-sidenav-menu-nested nav">
                                         <a class="nav-link" href="?menu=pinjaman">Data Pinjaman</a>
+                                        <a class="nav-link" href="?menu=cicilan_pinjaman">Cicilan Pinjaman</a>
                                         <a class="nav-link" href="?menu=histori_peminjaman">Histori Pinjaman</a>
                                         <a class="nav-link" href="?menu=summari_pinjaman">Summari Pinjaman</a>
                                     </nav>
@@ -103,6 +104,18 @@
                                     <nav class="sb-sidenav-menu-nested nav">
                                         <a class="nav-link" href="?menu=barang">Barang</a>
                                         <a class="nav-link" href="?menu=kategori_barang">Kategori Barang</a>
+                                    </nav>
+                                </div>
+
+                                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseKas" aria-expanded="false" aria-controls="collapseKas">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                        Kas
+                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                </a>
+                                <div class="collapse" id="collapseKas" aria-labelledby="headingThree" data-bs-parent="#sidenavAccordion">
+                                    <nav class="sb-sidenav-menu-nested nav">
+                                        <a class="nav-link" href="?menu=kas_masuk">Kas Masuk</a>
+                                        <a class="nav-link" href="?menu=kas_keluar">Kas Keluar</a>
                                     </nav>
                                 </div>
 
