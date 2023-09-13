@@ -60,7 +60,7 @@
                                                             <?php 
                                                                 $rrr = mysqli_query($koneksi,"select * from kategori");
                                                                 while($ddd = mysqli_fetch_array($rrr)){
-                                                                    if($ddd['id_kategori'] == $data['id_kategori']){
+                                                                    if($ddd['id'] == $data['id_kategori']){
                                                                             ?>
                                                                                 <option value="<?php echo $ddd['id'];?>" selected> <?php echo $ddd['nama_kategori'];?> </option>
                                                                             <?php 
