@@ -16,8 +16,8 @@
     
     $id=$data['id'];
     $jumlah=$data['jumlah'];
-    
-    $q=mysqli_query($koneksi,"update cart set jumlah = '".$jumlah."' where id = '".$id."'");
+    $hhh =  floor($jumlah * $data['harga']);
+    $q=mysqli_query($koneksi,"update cart set jumlah = '".$jumlah."', harga = '".$hhh."' where id = '".$id."'");
     
     if($q){
 
