@@ -26,13 +26,13 @@
                                             <div class="row mb-3">
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputStok" type="number" name="stok" <?php echo $data['stok']; ?> placeholder="Enter Stok" />
+                                                        <input class="form-control" id="inputStok" type="number" name="stok" value="<?php echo $data['stok']; ?>" placeholder="Enter Stok" />
                                                         <label for="inputStok"> Stok </label>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-floating">
-                                                        <input class="form-control" id="inputHarga" type="number" name="harga" <?php echo $data['harga']; ?> placeholder="Enter Harga" />
+                                                        <input class="form-control" id="inputHarga" type="number" name="harga" value="<?php echo $data['harga']; ?>" placeholder="Enter Harga" />
                                                         <label for="inputHarga">Harga</label>
                                                     </div>
                                                 </div>
@@ -49,7 +49,7 @@
                                             <div class="row mb-3">
                                                 <div class="col-md-4">
                                                     <div class="form-floating mb-3 mb-md-0">
-                                                        <input class="form-control" id="inputKeterangan" type="text" name="keterangan" <?php echo $data['keterangan']; ?> placeholder="Keterangan" />
+                                                        <input class="form-control" id="inputKeterangan" type="text" name="keterangan" value="<?php echo $data['keterangan']; ?>" placeholder="Keterangan" />
                                                         <label for="inputKeterangan"> Keterangan </label>
                                                     </div>
                                                 </div>
