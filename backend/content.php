@@ -75,7 +75,7 @@ if($_GET['menu'] == 'edit_barang'){
 }
 
 if($_GET['menu'] == 'view_detail_pinjaman'){
-    include "include/cicilan.php";
+    include "include/view_detail_pinjaman.php";
 }
 
 if($_GET['menu'] == 'toko'){
@@ -85,4 +85,17 @@ if($_GET['menu'] == 'toko'){
 if($_GET['menu'] == 'tambah_toko'){
     include "include/tambah_toko.php";
 }
+
+if($_GET['menu'] == 'summari_simpanan'){
+    include "include/summari_simpanan.php";
+}
+
+if($_GET['menu'] == 'summari_pinjaman'){
+    include "include/summari_pinjaman.php";
+}
+
+if($_GET['menu'] == 'cicilan'){
+    include "include/cicilan.php";
+}
+
 ?>
