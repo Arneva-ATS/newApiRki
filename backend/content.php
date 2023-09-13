@@ -98,4 +98,11 @@ if($_GET['menu'] == 'cicilan'){
     include "include/cicilan.php";
 }
 
+if($_GET['menu'] == 'pemesanan'){
+    include "include/pemesanan.php";
+}
+
+if($_GET['menu'] == 'cart'){
+    include "include/cart.php";
+}
 ?>

@@ -127,7 +127,8 @@
                                 </a>
                                 <div class="collapse" id="collapsePemesanan" aria-labelledby="headingThree" data-bs-parent="#sidenavAccordion">
                                     <nav class="sb-sidenav-menu-nested nav">
-                                        <a class="nav-link" href="?menu=pemesanan">Pemesanan</a>
+                                        <a class="nav-link" href="?menu=pemesanan">Data Pemesanan</a>
+                                        <a class="nav-link" href="?menu=cart"> Cart </a>
                                         <a class="nav-link" href="?menu=ppob"> PPOB </a>
                                     </nav>
                                 </div>

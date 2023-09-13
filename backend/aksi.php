@@ -117,4 +117,9 @@ if($_GET['act'] == 'hapus_toko'){
     mysqli_query($koneksi,"delete from toko where id = '".$_GET['id']."'");
     header('location:dashboard.php?menu=toko');
 }
+
+if($_GET['act'] == 'hapus_cart'){
+    mysqli_query($koneksi,"delete from cart where id = '".$_GET['id']."'");
+    header('location:dashboard.php?menu=cart');
+}
 ?>
