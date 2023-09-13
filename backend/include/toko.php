@@ -20,7 +20,7 @@
                                             <th>Nama Toko</th>
                                             <th>Email</th>
                                             <th>Alamat</th>
-                                            <th>User Login</th>
+                                            <th>Koperasi</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
@@ -30,7 +30,7 @@
                                             <th>Nama Toko</th>
                                             <th>Email</th>
                                             <th>Alamat</th>
-                                            <th>User Login</th>
+                                            <th>Koperasi</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </tfoot>
