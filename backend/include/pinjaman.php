@@ -56,7 +56,7 @@
                                             <td> 
                                                 <a href="aksi.php?act=approve_pinjaman&id=<?php echo $data['id'];?>" class="btn btn-warning" onclick="return confirm('Yakin Mau Di Approve ??')"> Approve </a> 
                                                 <a href="?menu=view_detail_pinjaman&id=<?php echo $data['id'];?>" class="btn btn-info"> Detail </a>     
-                                                <a href="aksi.php?act=hapus_pinjaman&id=<?php echo $data['id'];?>" class="btn btn-danger" onclick="return confirm('Yakin Mau Hapus ??')"> Hapus </a> `
+                                                <a href="aksi.php?act=hapus_pinjaman&id=<?php echo $data['id'];?>" class="btn btn-danger" onclick="return confirm('Yakin Mau Hapus ??')"> Hapus </a> 
                                             </td>
                                         </tr>
                                       <?php } ?>
