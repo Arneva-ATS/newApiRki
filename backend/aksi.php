@@ -98,8 +98,6 @@ if($_GET['act'] == 'insert_barang'){
         }else{
             header('location:dashboard.php?menu=barang');
         }
-
-
     }
 
 }
@@ -111,16 +109,12 @@ if($_GET['act'] == 'hapus_kategori_barang'){
 }
 
 if($_GET['act'] == 'insert_kategori_barang'){
-
     mysqli_query($koneksi,"insert into kategori(kode_kategori,nama_kategori)values('".$_POST['kode_kategori']."','".$_POST['nama_kategori']."')");
     header('location:dashboard.php?menu=kategori_barang');
-
 }
 
-if($_GET['act'] == 'insert_toko'){
-
-    mysqli_query($koneksi,"insert into toko(kode_toko,nama_toko,email,alamat,id_koperasi)values('".$_POST['kode_toko']."','".$_POST['nama_toko']."','".$_POST['email']."','".$_POST['alamat']."','".$_POST['id_koperasi']."')");
+if($_GET['act'] == 'hapus_toko'){
+    mysqli_query($koneksi,"delete from toko where id = '".$_GET['id']."'");
     header('location:dashboard.php?menu=toko');
-
 }
 ?>
