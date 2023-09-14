@@ -3,12 +3,12 @@
                         <h1 class="mt-4"> Koperasi </h1>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Data Kas Masuk</li>
+                            <li class="breadcrumb-item active">Data Kas</li>
                         </ol>
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
-                                    Data Kas Masuk | <a href="?menu=tambah_anggota"> Tambah Kas Masuk </a>
+                                    Data Kas | <a href="?menu=tambah_kas"> Tambah Kas </a>
                             </div>
                             <div class="card-body">
                                 <table id="datatablesSimple">
