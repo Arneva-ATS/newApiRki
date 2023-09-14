@@ -113,4 +113,8 @@ if($_GET['menu'] == 'profile'){
 if($_GET['menu'] == 'kas'){
     include "include/kas.php";
 }
+
+if($_GET['menu'] == 'tambah_kas'){
+    include "include/tambah_kas.php";
+}
 ?>
