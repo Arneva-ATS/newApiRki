@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 12, 2023 at 07:54 AM
+-- Generation Time: Sep 14, 2023 at 02:34 AM
 -- Server version: 5.7.42
 -- PHP Version: 7.4.33
 
@@ -60,18 +60,17 @@ CREATE TABLE IF NOT EXISTS `cart` (
   `keterangan` text NOT NULL,
   `id_kategori` int(11) NOT NULL,
   `id_koperasi` int(11) NOT NULL,
-  `jumlah` int(11) NOT NULL DEFAULT '0',
+  `jumlah` int(11) NOT NULL DEFAULT '1',
   `session_id` varchar(100) NOT NULL,
   `id_user` int(11) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=78 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `cart`
 --
 
 INSERT INTO `cart` (`id`, `kode_barang`, `nama_barang`, `stok`, `harga`, `photo`, `keterangan`, `id_kategori`, `id_koperasi`, `jumlah`, `session_id`, `id_user`) VALUES
-(29, 'BRG_00001', 'Sampo Lifeboy', 10, 12000, 'https://assets.unileversolutions.com/v1/1634391.png', 'asdasdasdasd', 1, 1, 0, '047rvlk16tbgu2pco62vrlvl72', 0),
-(30, 'BRG_00002', 'Bumbu Kuning', 10, 15000, 'https://www.sarimunik.com/wp-content/uploads/2018/09/bumbu-dasar-kuning.jpg', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 1, 3, 0, '2j1vff8d7ni2ss8biu6f5rephi', NULL);
+(77, 'BRG_00002', 'Bumbu Kuning', 10, 15000, 'https://www.sarimunik.com/wp-content/uploads/2018/09/bumbu-dasar-kuning.jpg', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 1, 3, 1, '2j1vff8d7ni2ss8biu6f5rephi', NULL);
 
 -- --------------------------------------------------------
 
@@ -96,6 +95,24 @@ INSERT INTO `jenis_pinjaman` (`id`, `kode_jenis_pinjaman`, `nama_jenis_pinjaman`
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `kas`
+--
+
+CREATE TABLE IF NOT EXISTS `kas` (
+  `id` int(11) NOT NULL,
+  `kode_trx` varchar(100) NOT NULL,
+  `tanggal` date NOT NULL,
+  `jenis_kas` enum('kas_masuk','kas_keluar') NOT NULL,
+  `kas_masuk` int(11) NOT NULL,
+  `kas_keluar` int(11) NOT NULL,
+  `nominal` int(11) NOT NULL,
+  `id_koperasi` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `kategori`
 --
 
@@ -103,7 +120,7 @@ CREATE TABLE IF NOT EXISTS `kategori` (
   `id` int(11) NOT NULL,
   `kode_kategori` varchar(100) NOT NULL,
   `nama_kategori` varchar(100) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `kategori`
@@ -111,7 +128,8 @@ CREATE TABLE IF NOT EXISTS `kategori` (
 
 INSERT INTO `kategori` (`id`, `kode_kategori`, `nama_kategori`) VALUES
 (1, 'KD_00001', 'Peralatan Mandi'),
-(2, 'KD_00002', 'Bumbu Dapur');
+(2, 'KD_00002', 'Bumbu Dapur'),
+(5, 'KD_000003', 'Elektronik');
 
 -- --------------------------------------------------------
 
@@ -147,6 +165,7 @@ INSERT INTO `koperasi` (`id`, `kode_koperasi`, `nama_koperasi`, `email`, `alamat
 CREATE TABLE IF NOT EXISTS `pembayaran_pinjaman` (
   `id` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
+  `id_koperasi` int(11) DEFAULT NULL,
   `jumlah_pinjaman` int(11) NOT NULL,
   `no_rekening` varchar(100) NOT NULL,
   `keterangan` text NOT NULL,
@@ -198,9 +217,9 @@ CREATE TABLE IF NOT EXISTS `pengguna` (
 INSERT INTO `pengguna` (`id`, `username`, `nama`, `password`, `token`, `status`, `id_koperasi`, `id_toko`) VALUES
 (5, 'rki', 'RKI', '827ccb0eea8a706c4c34a16891f84e7b', 'ba60836c05f74f20a4f27f52c39fe429f736906be1c5f6a90f61d2a2dfec3928e6d9d53dc786813400e9fcac708b66e9a69713682e32a7d9f37a820d', 'rki', 0, 0),
 (7, 'kop_pgs', 'KOP PGS', '827ccb0eea8a706c4c34a16891f84e7b', 'f47ec7e79896ce69764ace557947d3d50f94a191c3dbc6e34e23fb4473957c9e9420b0e9076baf59c2329e7f12d82d1f4f52b20eff67f2fff6a619cc', 'koperasi', 3, 0),
-(15, '081927067602', 'Rifqi', '827ccb0eea8a706c4c34a16891f84e7b', 'ee52c7aece3dee72c7926c2e2c7c350e8ee90fa24491af4478de44ab97bafa07ab32fbaf95cf18148592f6dd920e503efd1b9b7ba5b5f8084939a74d', 'anggota', 3, 0),
+(15, '081927067602', 'Rifqi', '827ccb0eea8a706c4c34a16891f84e7b', 'd879928e7ca185441c4eddb3f58a5827226d1593063671a1da96ef660d64adc9dec115d41fe17d4a12855d6fbe65164c5a451b5f85b6fb41533cb855', 'anggota', 3, 0),
 (16, 'kop_graha_kas', 'KOP GRAHA KAS', '827ccb0eea8a706c4c34a16891f84e7b', 'null', 'koperasi', 4, 0),
-(17, '082124240977', 'ALI', '827ccb0eea8a706c4c34a16891f84e7b', '5c4ea7531566043f176a4a1ffd688c09fc5a0130ed0442f0517b958f281e78fbbe67727ed52f86379db04b7588435875065352f6951c5f93880c9e89', 'anggota', 3, 0),
+(17, '082124240977', 'ALI', '827ccb0eea8a706c4c34a16891f84e7b', '2a94afacd1adeb02e0c199105a196b0860dfa8021378d2bc8cc241a5e8743d592bcaadbf28e7a8410883c488950400cf1216257ff40d1290ef555d77', 'anggota', 3, 0),
 (18, 'kop_111', 'KOP 111', '827ccb0eea8a706c4c34a16891f84e7b', 'null', 'koperasi', 5, 0),
 (19, '08123456789', 'DIKA', '827ccb0eea8a706c4c34a16891f84e7b', 'null', 'anggota', 3, 0);
 
@@ -218,7 +237,7 @@ CREATE TABLE IF NOT EXISTS `pinjaman` (
   `lama_angsuran` int(11) NOT NULL,
   `keterangan` text NOT NULL,
   `tanggal` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `approve` enum('diterima','ditolak') NOT NULL DEFAULT 'ditolak'
+  `approve` enum('diterima','pending','ditolak') NOT NULL DEFAULT 'pending'
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
 
 --
@@ -261,7 +280,7 @@ INSERT INTO `pos` (`id`, `kode_barang`, `nama_barang`, `stok`, `harga`, `photo`,
 (3, 'BRG_00003', 'Sikat Gigi', 10, 12000, 'https://res.cloudinary.com/dk0z4ums3/image/upload/v1681963247/attached_image/cara-memilih-dan-merawat-sikat-gigi-0-alodokter.jpg', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 1, 4, ''),
 (4, 'BRG_00002', 'Garam Dapur', 10, 15000, 'https://id-test-11.slatic.net/p/874c730548c61897f5f55a47f88fadb8.jpg', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 2, 4, ''),
 (5, 'BRG_00005', 'Minyak Goreng', 10, 20000, 'http://34.28.160.3/newApiRki/backend/barang/1694405585.jpg', 'ini yah', 2, 3, 'null'),
-(7, 'BRG_00006', 'Sikat Gigi', 12, 20000, 'http://34.28.160.3/newApiRki/backend/barang/1694405585.jpg', 'Keterangan', 1, 3, 'null'),
+(7, 'BRG_00006', 'Sikat Gigi', 12, 20000, 'http://34.28.160.3/newApiRki/backend/barang/1694656587.jpg', 'Keterangan', 1, 3, 'null'),
 (8, 'BRG_00008', 'Bawang', 2, 20000, 'http://34.28.160.3/newApiRki/backend/barang/1694407746.jpg', 'Keterangan', 2, 1, 'rki');
 
 -- --------------------------------------------------------
@@ -355,8 +374,15 @@ CREATE TABLE IF NOT EXISTS `toko` (
   `nama_toko` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `alamat` varchar(255) NOT NULL,
-  `id_user` int(11) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `id_koperasi` int(11) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `toko`
+--
+
+INSERT INTO `toko` (`id`, `kode_toko`, `nama_toko`, `email`, `alamat`, `id_koperasi`) VALUES
+(2, 'TK_000001', 'Toko HP', 'andika@gmail.com', 'jakarta', 3);
 
 --
 -- Indexes for dumped tables
@@ -378,6 +404,12 @@ ALTER TABLE `cart`
 -- Indexes for table `jenis_pinjaman`
 --
 ALTER TABLE `jenis_pinjaman`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `kas`
+--
+ALTER TABLE `kas`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -459,17 +491,22 @@ ALTER TABLE `anggota`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=31;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=78;
 --
 -- AUTO_INCREMENT for table `jenis_pinjaman`
 --
 ALTER TABLE `jenis_pinjaman`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
+-- AUTO_INCREMENT for table `kas`
+--
+ALTER TABLE `kas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT for table `kategori`
 --
 ALTER TABLE `kategori`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `koperasi`
 --
@@ -519,7 +556,7 @@ ALTER TABLE `simpanan`
 -- AUTO_INCREMENT for table `toko`
 --
 ALTER TABLE `toko`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
