@@ -34,7 +34,7 @@
                                     </tfoot>
                                     <tbody>
                                     <?php 
-                                        $sql = mysqli_query($koneksi,"select * from anggota order by id desc");
+                                        $sql = mysqli_query($koneksi,"select * from anggota where id_koperasi = '".$_SESSION['id_koperasi']."' order by id desc");
                                         while($data = mysqli_fetch_assoc($sql)){
                                     ?>
                                         <tr>
