@@ -14,6 +14,7 @@
     if($check > 0){
     $sesionid = session_id();
     // $q=mysqli_query($con,"select * from pemesanan where session_id = '".$sesionid."'");
+    $data = array();
     $q=mysqli_query($con,"select * from pemesanan");
     while ($row=mysqli_fetch_object($q)){
         $data[] = $row;
