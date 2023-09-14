@@ -3,8 +3,8 @@
     <h4>PROFILE</h4>
     <div class="row">
         <div class="col-lg-12">
-                <div class="card overflow-hidden">
-                    <div class="row no-gutters row-bordered row-border-light">
+                <div class="card shadow-lg border-0 rounded-lg mt-5overflow-hidden">
+                    <div class="row">
                         <div class="col-md-12">
                             <div class="tab-content">
                                 <div class="tab-pane fade active show" id="account-general">
