@@ -18,6 +18,7 @@ $check = mysqli_num_rows($sql);
         $_SESSION['status'] = $data['status'];
         $_SESSION['id_koperasi'] = $data['id_koperasi'];
         $_SESSION['token'] = $data['token'];
+        $_SESSION['nama'] = $data['nama'];
         $_SESSION['id_koperasi'] = $data['id_koperasi'];
 
         header('location:dashboard.php');
