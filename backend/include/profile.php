@@ -1,4 +1,5 @@
-<div class="container light-style flex-grow-1 container-p-y">
+<main>
+<div class="container">
     <h4>PROFILE</h4>
     <div class="card overflow-hidden">
         <div class="row no-gutters row-bordered row-border-light">
@@ -32,3 +33,4 @@
         </div>
     </div>
 </div>
+</main>
