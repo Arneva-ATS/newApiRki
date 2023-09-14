@@ -114,7 +114,7 @@
                                 </a>
                                 <div class="collapse" id="collapseKas" aria-labelledby="headingThree" data-bs-parent="#sidenavAccordion">
                                     <nav class="sb-sidenav-menu-nested nav">
-                                        <a class="nav-link" href="?menu=kas_masuk">Data Kas </a>
+                                        <a class="nav-link" href="?menu=kas">Data Kas </a>
                                     </nav>
                                 </div>
 

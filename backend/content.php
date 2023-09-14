@@ -109,4 +109,8 @@ if($_GET['menu'] == 'cart'){
 if($_GET['menu'] == 'profile'){
     include "include/profile.php";
 }
+
+if($_GET['menu'] == 'kas'){
+    include "include/kas.php";
+}
 ?>
