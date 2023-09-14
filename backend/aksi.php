@@ -156,6 +156,11 @@ if($_GET['act'] == 'insert_kategori_barang'){
     header('location:dashboard.php?menu=kategori_barang');
 }
 
+if($_GET['act'] == 'insert_toko'){
+    mysqli_query($koneksi,"insert into toko(kode_toko,nama_toko,email,alamat,id_koperasi)values('".$_POST['kode_toko']."','".$_POST['nama_toko']."','".$_POST['email']."','".$_POST['alamat']."','".$_POST['id_koperasi']."')");
+    header('location:dashboard.php?menu=toko');
+}
+
 if($_GET['act'] == 'hapus_toko'){
     mysqli_query($koneksi,"delete from toko where id = '".$_GET['id']."'");
     header('location:dashboard.php?menu=toko');
