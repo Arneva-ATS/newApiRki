@@ -1,6 +1,8 @@
 <main>
 <div class="container">
-    <h4>PROFILE</h4>
+    <br>
+    <h3>PROFILE</h2>
+    <br>
     <div class="row">
         <div class="col-lg-12">
                 <div class="card shadow-lg border-0 rounded-lg mt-5overflow-hidden">
