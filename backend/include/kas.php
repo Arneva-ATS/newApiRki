@@ -19,9 +19,7 @@
                                             <th>Jenis Kas</th>
                                             <th>Kas Masuk</th>
                                             <th>Kas Keluar</th>
-                                            <th>Nomimal</th>
                                             <th>Koperasi</th>
-                                            <th>User</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
@@ -32,9 +30,7 @@
                                             <th>Jenis Kas</th>
                                             <th>Kas Masuk</th>
                                             <th>Kas Keluar</th>
-                                            <th>Nomimal</th>
                                             <th>Koperasi</th>
-                                            <th>User</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </tfoot>
@@ -49,9 +45,7 @@
                                             <td> <?php echo $data['jenis_kas'];?> </td>
                                             <td> <?php echo $data['kas_masuk'];?> </td>
                                             <td> <?php echo $data['kas_keluar'];?> </td>
-                                            <td> <?php echo $data['nominal'];?> </td>
-                                            <td> <?php echo $data['id_koperasi'];?> </td>
-                                            <td> <?php echo $data['id_user'];?> </td>
+                                            <td> <?php echo convert_koperasi($data['id_koperasi']);?> </td>
                                             <td> ## </td>
                                         </tr>
                                       <?php } ?>

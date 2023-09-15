@@ -170,4 +170,12 @@ if($_GET['act'] == 'hapus_cart'){
     mysqli_query($koneksi,"delete from cart where id = '".$_GET['id']."'");
     header('location:dashboard.php?menu=cart');
 }
+
+if($_GET['act'] == 'insert_kas'){
+    mysqli_query($koneksi,"insert into kas(kode_trx,tanggal,jenis_kas,kas_masuk,kas_keluar,id_koperasi,id_user)values('".$_POST['kode_trx']."','".$_POST['tanggal']."','".$_POST['jenis_kas']."','".$_POST['kas_masuk']."','".$_POST['kas_keluar']."','".$_POST['id_koperasi']."','".$_POST['id_user']."')");
+    header('location:dashboard.php?menu=kas');
+   
+}
+
+
 ?>
