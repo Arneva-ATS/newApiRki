@@ -54,9 +54,9 @@
                                             <td> <?php echo $data['tanggal'];?> </td>
                                             <td> <?php echo $data['approve'];?> </td>
                                             <td> 
-                                                <a href="aksi.php?act=approve_pinjaman&id=<?php echo $data['id'];?>" class="btn btn-warning" onclick="return confirm('Yakin Mau Di Approve ??')"> Approve </a> 
-                                                <a href="?menu=view_detail_pinjaman&id=<?php echo $data['id'];?>" class="btn btn-info"> Detail </a>     
-                                                <a href="aksi.php?act=hapus_pinjaman&id=<?php echo $data['id'];?>" class="btn btn-danger" onclick="return confirm('Yakin Mau Hapus ??')"> Hapus </a> 
+                                                <a href="aksi.php?act=approve_pinjaman&id=<?php echo $data['id'];?>" class="btn btn-warning" onclick="return confirm('Yakin Mau Di Approve ??')"> <i class="fa fa-edit"></i> </a> 
+                                                <a href="?menu=view_detail_pinjaman&id=<?php echo $data['id'];?>" class="btn btn-info"> <i class="fa fa-eye"></i> </a>     
+                                                <a href="aksi.php?act=hapus_pinjaman&id=<?php echo $data['id'];?>" class="btn btn-danger" onclick="return confirm('Yakin Mau Hapus ??')"> <i class="fa fa-trash"></i> </a> 
                                             </td>
                                         </tr>
                                       <?php } ?>
@@ -66,7 +66,7 @@
                         </div>
                     </div>
                 </main>
-
+                ?menu=cicilan&id=<?php echo $data['id']; ?>&cc=<?php echo $bulanan; ?>&tempo=<?php echo $tempo;?>
                 <?php
                     } if($_SESSION['status'] == 'anggota'){
                 ?>
