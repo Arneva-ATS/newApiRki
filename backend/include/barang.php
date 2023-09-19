@@ -79,11 +79,12 @@
                             <li class="breadcrumb-item active">Data Barang</li>
                         </ol>
                         <br>
-                        <div class="row">
+                      
                             <?php 
                             $sql = mysqli_query($koneksi,"select * from pos where id_koperasi = '".$_SESSION['id_koperasi']."' order by id desc");
                             while($data = mysqli_fetch_assoc($sql)){
                             ?>
+                            <div class="row">
                             <div class="col-lg-4 d-flex align-items-stretch">
                             <div class="card" style="width: 12rem;">
                                 <img class="card-img-top" src="<?php echo $data['photo'];?>" alt="<?php echo $data['nama_barang'];?>">
@@ -94,8 +95,9 @@
                                 </div>
                                 </div>
                             </div>
+                            </div>
                             <?php } ?>
-                        </div>
+                        
                     </div>
                 </main>
 
