@@ -76,8 +76,8 @@ if(empty($_SESSION['username'])){
         <script>
             function add(e){
                 let idd = document.getElementById("nama_"+e).value; 
-                // let newIDD = parseInt(idd);
-                console.log(idd);
+                 let newIDD = parseInt(idd + 1);
+                console.log(newIDD);
             }
 
         </script>
