@@ -84,7 +84,7 @@
                             $sql = mysqli_query($koneksi,"select * from pos where id_koperasi = '".$_SESSION['id_koperasi']."' order by id desc");
                             while($data = mysqli_fetch_assoc($sql)){
                             ?>
-                            <div class="col-md-3 mb-5">
+                            <div class="col-lg-4 mb-5 d-flex align-items-stretch">
                             <div class="card card-body flex-fill" style="width: 12rem;">
                                 <img class="card-img-top" src="<?php echo $data['photo'];?>" alt="<?php echo $data['nama_barang'];?>">
                                 <div class="card-body">
@@ -100,8 +100,6 @@
                         
                     </div>
                 </main>
-
-             
 
                 <?php 
                     } if($_SESSION['status'] == 'rki'){
