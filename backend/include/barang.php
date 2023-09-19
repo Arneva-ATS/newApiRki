@@ -93,10 +93,11 @@
                                     <a href="#" class="btn btn-warning">Update</a>
                                 </div>
                                 </div>
-                                <br>
+                               
                             </div>
                             <?php } ?>
                         </div>
+                        <br>
                     </div>
                 </main>
 
