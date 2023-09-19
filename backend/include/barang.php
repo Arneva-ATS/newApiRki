@@ -85,7 +85,7 @@
                             while($data = mysqli_fetch_assoc($sql)){
                             ?>
                             <div class="col-lg-3 d-flex align-items-stretch">
-                            <div class="card" style="width: 12rem;">
+                            <div class="card card-body flex-fill" style="width: 12rem;">
                                 <img class="card-img-top" src="<?php echo $data['photo'];?>" alt="<?php echo $data['nama_barang'];?>">
                                 <div class="card-body">
                                     <h5 class="card-title"><?php echo $data['nama_barang'];?></h5>
