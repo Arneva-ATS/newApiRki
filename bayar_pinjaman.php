@@ -30,7 +30,7 @@
                         imagecopyresized($image,$im,0,0,0,0,$newwidth,$newheight,$width,$height);
                         imagejpeg($image,$dir);
                         imagedestroy($image);
-                        $url = $url_local.'/'.$dir;
+                        $url = $url_live.'/'.$dir;
                         $sql2 = mysqli_query($koneksi,"insert into pembayaran_pinjaman(id_user,jumlah_pinjaman,no_rekening,keterangan,photo)values('".$data['id_user']."','".$data['jumlah_pinjaman']."','".$data['no_rekening']."','".$data['keterangan']."','".$url."')");
                         if($sql2){
                             echo json_encode(
