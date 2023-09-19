@@ -75,9 +75,10 @@ if(empty($_SESSION['username'])){
         <script src="js/datatables-simple-demo.js"></script>
         <script>
             function add(e){
-                let idd = document.getElementById("nama_".e).value;
-                let newIDD = parseInt(idd) + parseInt(1);
-                alert(newIDD);
+                // let idd = document.getElementById("nama_".e).value;
+                // let newIDD = parseInt(idd) + parseInt(1);
+                // alert(newIDD);
+                console.log(e)
             }
 
         </script>
