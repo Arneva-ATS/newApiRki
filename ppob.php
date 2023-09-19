@@ -12,11 +12,12 @@
             $check = mysqli_num_rows($sql);
             
             if($check > 0){
-                
+                $row = array();
                 $sql2 = mysqli_query($koneksi,"select * from ppob order by id asc");
-                $data = mysqli_fetch_assoc($sql2);
-                $row = $data;
-
+                while($data = mysqli_fetch_assoc($sql2)){
+                    $row[] = $data;
+                }
+               
                 echo json_encode(
                     array(
                         'response_code' => 200,
