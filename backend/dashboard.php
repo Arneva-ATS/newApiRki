@@ -73,6 +73,13 @@ if(empty($_SESSION['username'])){
         <script src="js/scripts.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
         <script src="js/datatables-simple-demo.js"></script>
+        <script>
+            function add(e){
+                let idd = document.getElementById("nama_".e).value;
+                alert(idd);
+            }
+
+        </script>
     </body>
 </html>
 <?php } ?>
