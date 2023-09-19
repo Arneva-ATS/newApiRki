@@ -19,7 +19,8 @@
                     array(
                         'response_code' => 200,
                         'message' => 'Data Berhasil Ditampilkan',
-                        'jumlah_pinjaman' => $data['jumlah_pinjaman']
+                        'jumlah_pinjaman' => $data['jumlah_pinjaman'],
+                        'sisa_pinjaman' => $data['sisa_pinjaman']
                     )
                 );
         	
