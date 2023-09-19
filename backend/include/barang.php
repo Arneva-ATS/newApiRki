@@ -90,7 +90,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title"><?php echo $data['nama_barang'];?></h5>
                                     <p class="card-text"><?php echo substr($data['keterangan'],0,50);?>....</p>
-                                    <button class="btn btn-warning" onclick="remove('<?php echo $data['id']?>')"> - </button> <input type="number" size=1 value=1 id="nama_<?php echo $data['id']?>"> <button class="btn btn-primary" onclick="add('<?php echo $data['id']?>')"> + </button>
+                                    <button class="btn btn-warning" onclick="remove('<?php echo $data['id']?>')"> - </button> <input type="number" value=1 id="nama_<?php echo $data['id']?>" style="width:30px"> <button class="btn btn-primary" onclick="add('<?php echo $data['id']?>')"> + </button>
                                 </div>
                                 </div>
                                
