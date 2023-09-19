@@ -80,6 +80,12 @@ if(empty($_SESSION['username'])){
                 document.getElementById("nama_"+e).value = newIDD;
             }
 
+            function remove(e){
+                let idd = document.getElementById("nama_"+e).value; 
+                let newIDD = Math.ceil(parseInt(idd) - parseInt(1));
+                document.getElementById("nama_"+e).value = newIDD;
+            }
+
         </script>
     </body>
 </html>
