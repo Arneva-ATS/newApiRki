@@ -90,7 +90,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title"><?php echo $data['nama_barang'];?></h5>
                                     <p class="card-text"><?php echo substr($data['keterangan'],0,50);?>....</p>
-                                    <button>-</button><input type="text" size=1><button>+</button>
+                                    <button class="btn btn-primary"> - </button> <input type="text" size=1> <button class="btn btn-primary"> + </button>
                                 </div>
                                 </div>
                                
