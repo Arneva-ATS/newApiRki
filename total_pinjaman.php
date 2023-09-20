@@ -19,6 +19,7 @@
                     array(
                         'response_code' => 200,
                         'message' => 'Data Berhasil Ditampilkan',
+                        'id_pinjaman' => $data['id'],
                         'jumlah_pinjaman' => $data['jumlah_pinjaman'],
                         'sisa_pinjaman' => $data['sisa_pinjaman']
                     )
