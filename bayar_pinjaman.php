@@ -46,6 +46,7 @@
                                 array(
                                     'response_code' => 401,
                                     'message' => 'Failed Insert Data',
+                                    'data' => $qqq
                                 )
                             );
                         }
