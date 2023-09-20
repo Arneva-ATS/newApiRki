@@ -14,7 +14,7 @@
             if($check > 0){
                 
                 $data = json_decode(file_get_contents("php://input"),true);
-                $qqq = mysqli_fetch_array($sql);
+                $bbb = mysqli_fetch_assoc($sql);
 
                 $dir = "upload/".date("dmYHis").".jpeg";
                 $exp = explode(",",$data['photo']);
@@ -32,21 +32,19 @@
                         imagejpeg($image,$dir);
                         imagedestroy($image);
                         $url = $url_live.'/'.$dir;
-                        $sql2 = mysqli_query($koneksi,"insert into pembayaran_pinjaman(id_user,id_koperasi,id_pinjaman,jumlah_pinjaman,no_rekening,keterangan,photo)values('".$data['id_user']."','".$qqq['id_koperasi']."','".$data['id_pinjaman']."','".$data['jumlah_pinjaman']."','".$data['no_rekening']."','".$data['keterangan']."','".$url."')");
+                        $sql2 = mysqli_query($koneksi,"insert into pembayaran_pinjaman(id_user,id_koperasi,id_pinjaman,jumlah_pinjaman,no_rekening,keterangan,photo)values('".$data['id_user']."','".$bbb['id_koperasi']."','".$data['id_pinjaman']."','".$data['jumlah_pinjaman']."','".$data['no_rekening']."','".$data['keterangan']."','".$url."')");
                         if($sql2){
                             echo json_encode(
                                 array(
                                     'response_code' => 200,
-                                    'message' => 'Success Insert Data',
-                                    'data' => $qqq
+                                    'message' => 'Success Insert Data'
                                 )
                             );
                         }else{
                             echo json_encode(
                                 array(
                                     'response_code' => 401,
-                                    'message' => 'Failed Insert Data',
-                                    'data' => $qqq
+                                    'message' => 'Failed Insert Data'
                                 )
                             );
                         }
