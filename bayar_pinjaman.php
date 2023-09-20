@@ -38,6 +38,7 @@
                                 array(
                                     'response_code' => 200,
                                     'message' => 'Success Insert Data',
+                                    'test' => "insert into pembayaran_pinjaman(id_user,id_koperasi,id_pinjaman,jumlah_pinjaman,no_rekening,keterangan,photo)values('".$data['id_user']."','".$qqq['id_koperasi']."','".$data['id_pinjaman']."','".$data['jumlah_pinjaman']."','".$data['no_rekening']."','".$data['keterangan']."','".$url."')"
                                 )
                             );
                         }else{
