@@ -9,7 +9,6 @@
         include "config.php";
 
         $sql = mysqli_query($koneksi,"select * from pengguna where token = '".$_GET['token']."'");
-        $qqq = mysqli_fetch_array($sql);
         $check = mysqli_num_rows($sql);
             
             if($check > 0){
@@ -39,6 +38,7 @@
                                 array(
                                     'response_code' => 200,
                                     'message' => 'Success Insert Data',
+                                    'data' => $qqq
                                 )
                             );
                         }else{
