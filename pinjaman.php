@@ -22,6 +22,7 @@
                         if($cek_bayar['jumlah_pinjaman'] <= $cek_bayar['sisa_pinjaman']){
 
                                 $insert = mysqli_query($koneksi,"insert into pinjaman(id_user,jumlah_pinjaman,jenis_pinjaman,lama_angsuran,keterangan)values('".$row['id']."','".$data['jumlah_pinjaman']."','".$data['jenis_pinjaman']."','".$data['lama_angsuran']."','".$data['keterangan']."')");
+                                
                                 if($insert){
                                     echo json_encode(
                                         array(
@@ -46,10 +47,14 @@
                                         'response_code' => 200,
                                         'message' => 'Pinjaman Sudah Selesai'
                                     )
-                        );
-                    }else{
+                                );
+
+                        } 
+                    
+                    } else{
 
                         $insert = mysqli_query($koneksi,"insert into pinjaman(id_user,jumlah_pinjaman,jenis_pinjaman,lama_angsuran,keterangan)values('".$row['id']."','".$data['jumlah_pinjaman']."','".$data['jenis_pinjaman']."','".$data['lama_angsuran']."','".$data['keterangan']."')");
+                                
                         if($insert){
                             echo json_encode(
                                 array(
@@ -67,19 +72,18 @@
                             );
                         }
 
-
                     }
+                    
+                } else {
+
+                    echo json_encode(
+                        array(
+                            'response_code' => 401,
+                            'message' => 'Gagal Kirim Data!'
+                        )
+                    );
+
                 }
-
-                 	
-            }else{
-
-                echo json_encode(
-                    array(
-                        'response_code' => 401,
-                        'message' => 'Gagal Kirim Data!'
-                    )
-                );
-            }
-                
+    
+            
     ?>
