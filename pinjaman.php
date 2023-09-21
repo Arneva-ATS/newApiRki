@@ -46,6 +46,8 @@
 
                         }else{
 
+                                mysqli_query($koneksi,"update pinjaman set status_lunas = 'lunas' where id_user = '".$row['id']."'");
+
                                 echo json_encode(
                                     array(
                                         'response_code' => 200,
