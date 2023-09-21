@@ -15,9 +15,13 @@
 
                 $data = json_decode(file_get_contents("php://input"),true);
 
-                $cek_bayar = mysqli_num_rows(mysqli_query($koneksi,"select * from pinjaman where id_user = '".$row['id']."' and status_lunas = 'belum_lunas'"));
+                $ppp = mysqli_query($koneksi,"select * from pinjaman where id_user = '".$row['id']."' and status_lunas = 'belum_lunas'");
+                    
+                    $bbb = mysqli_num_rows($ppp);
 
-                    if($cek_bayar > 0){
+                    if($bbb > 0){
+
+                        $cek_bayar = mysqli_fetch_array($ppp);
 
                         if($cek_bayar['jumlah_pinjaman'] <= $cek_bayar['sisa_pinjaman']){
 
