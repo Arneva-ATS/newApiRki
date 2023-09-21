@@ -21,7 +21,7 @@
                         'message' => 'Data Berhasil Ditampilkan',
                         'id_pinjaman' => $data['id'],
                         'jumlah_pinjaman' => $data['jumlah_pinjaman'],
-                        'sisa_pinjaman' => $data['sisa_pinjaman']
+                        'sisa_pinjaman' => ceil($data['jumlah_pinjaman'] - $data['sisa_pinjaman'])
                     )
                 );
         	
