@@ -23,7 +23,7 @@
 
                         $cek_bayar = mysqli_fetch_array($ppp);
 
-                        if($cek_bayar['jumlah_pinjaman'] > $cek_bayar['sisa_pinjaman']){
+                        if($cek_bayar['sisa_pinjaman'] < $cek_bayar['jumlah_pinjaman']){
 
                                 $insert = mysqli_query($koneksi,"insert into pinjaman(id_user,jumlah_pinjaman,jenis_pinjaman,lama_angsuran,keterangan)values('".$row['id']."','".$data['jumlah_pinjaman']."','".$data['jenis_pinjaman']."','".$data['lama_angsuran']."','".$data['keterangan']."')");
                                 
