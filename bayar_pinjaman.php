@@ -33,6 +33,7 @@
                         $url = $url_live.'/'.$dir;
                         $sql2 = mysqli_query($koneksi,"insert into pembayaran_pinjaman(id_user,id_koperasi,id_pinjaman,jumlah_pinjaman,cicilan,no_rekening,keterangan,photo)values('".$data['id_user']."','3','".$data['id_pinjaman']."','".$data['jumlah_pinjaman']."','".$data['cicilan']."','".$data['no_rekening']."','".$data['keterangan']."','".$url."')");
                         if($sql2){
+                            mysqli_query($koneksi,"update pinjaman set sisa_pinjaman = sisa_pinjaman + '".$data['cicilan']."' where id = '".$data['id_pinjaman']."'");
                             echo json_encode(
                                 array(
                                     'response_code' => 200,
