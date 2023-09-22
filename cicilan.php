@@ -24,7 +24,7 @@
                 echo json_encode(
                     array(
                         'response_code' => 200,
-                        'data' => $cc
+                        'data' => $count
                     )
                 );
         	
