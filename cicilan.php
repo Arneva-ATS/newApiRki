@@ -25,7 +25,7 @@
                 echo json_encode(
                     array(
                         'response_code' => 200,
-                        'data' => $cc
+                        'data' => "select * from pembayaran_pinjaman where id_user = '".$rows['id']."' and id_pinjaman = '".$_GET['id_pinjaman']."'"
                     )
                 );
         	
