@@ -15,16 +15,31 @@
                 $sql2 = mysqli_query($koneksi,"select * from pinjaman where id_user = '".$rows['id']."' and approve = 'diterima' order by id desc limit 1");
                 $data = mysqli_fetch_assoc($sql2);
 
-                echo json_encode(
-                    array(
-                        'response_code' => 200,
-                        'message' => 'Data Berhasil Ditampilkan',
-                        'id_pinjaman' => $data['id'],
-                        'jumlah_pinjaman' => $data['jumlah_pinjaman'],
-                        'lama_angsuran' => $data['lama_angsuran'],
-                        'sisa_pinjaman' => ceil($data['jumlah_pinjaman'] - $data['sisa_pinjaman'])
-                    )
-                );
+                if($data['sisa_pinjaman'] < $data['jumlah_pinjaman'] )
+                {
+                    echo json_encode(
+                        array(
+                            'response_code' => 200,
+                            'message' => 'Data Berhasil Ditampilkan',
+                            'id_pinjaman' => $data['id'],
+                            'jumlah_pinjaman' => $data['jumlah_pinjaman'],
+                            'lama_angsuran' => $data['lama_angsuran'],
+                            'sisa_pinjaman' => ceil($data['jumlah_pinjaman'] - $data['sisa_pinjaman'])
+                        )
+                    );
+                }else{
+                    echo json_encode(
+                        array(
+                            'response_code' => 200,
+                            'message' => 'Data Berhasil Ditampilkan',
+                            'id_pinjaman' => $data['id'],
+                            'jumlah_pinjaman' => 0,
+                            'lama_angsuran' => 0,
+                            'sisa_pinjaman' => 0
+                        )
+                    );
+                }
+                
         	
             }else{
                 echo json_encode(
