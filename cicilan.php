@@ -18,7 +18,7 @@
                 if($count > 0){
                     $cc = $count + 1 ;
                 }else{
-                    $cc = 1;
+                    $cc = 0 ;
                 }
 
                 echo json_encode(
