@@ -16,7 +16,7 @@
                 $sql2 = mysqli_query($koneksi,"select * from pembayaran_pinjaman where id_user = '".$rows['id']."' and id_pinjaman = '".$_GET['id_pinjaman']."'");
                 $count = mysqli_num_rows($sql2);
                 if($count > 0){
-                    $cc = ( $count + 1 );
+                    $cc = $count + 1 ;
                 }else{
                     $cc = 1;
                 }
