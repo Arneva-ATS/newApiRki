@@ -121,4 +121,9 @@ if($_GET['menu'] == 'tambah_kas'){
 if($_GET['menu'] == 'pengguna'){
     include "include/pengguna.php";
 }
+
+
+if($_GET['menu'] == 'ppob'){
+    include "include/ppob.php";
+}
 ?>
