@@ -9,7 +9,7 @@
         include "config.php";
 
         $sql = mysqli_query($koneksi,"select * from pengguna where token = '".$_GET['token']."'");
-        $row = mysqli_fetch_assoc($sql);
+        $rows = mysqli_fetch_assoc($sql);
         $check = mysqli_num_rows($sql);
             
             if($check > 0){
