@@ -15,7 +15,6 @@
             <img class="logo" src="assets/img/Logo.png" />
             <h1 class="welcoming">Welcome!</h1>
             <h3 class="description">Control Data Center of Rumah Kesejahteraan Indonesia (RKI) The first step towards success is through this gateway. Together, we will forge new achievements and realize dreams. Enter your credentials and let's embark on a journey towards boundless progress and innovation.</h3>
-            <button onclick="window.location.href='https://rkicoop.co.id/'">Company Website</button>
         </div>
            
         <div class="column">
@@ -29,7 +28,7 @@
                 <label style="text-align: right" for="password">Password</label>
                 <input type="password" placeholder="Password" id="password" name="password">
 
-                <button type="submit">Log In</button>
+                <button class="login" type="submit">Log In</button>
             </form>
         </div>
     </div>
