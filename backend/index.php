@@ -1,36 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Login</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 </head>
+
 <body>
+    
+    <div class="container" style="margin-top:50px">
+        <div class="row">
+            <div class="col-md-12 text-left">
+                <img class="logo" src="assets/img/Logo.png" alt="Company Logo">
+             </div>
+        </div>
+             
+
+    <br> <br>
+
     <div class="row">
-        <div class="column">
-            <img class="logo" src="assets/img/Logo.png" />
-            <h1 class="welcoming">Welcome!</h1>
-            <h3 class="description">Control Data Center of Rumah Kesejahteraan Indonesia (RKI) The first step towards success is through this gateway. Together, we will forge new achievements and realize dreams. Enter your credentials and let's embark on a journey towards boundless progress and innovation.</h3>
-        </div>
-           
-        <div class="column">
-        <form method="POST" action="cek_login.php">
-                <h2 style="text-align: right"> Login to your Account</h2>
-                <hr class="right-align">
+        
+            <div class="col-md-6 text-left" style="margin-top:100px">
+                <h1 class="welcoming">Welcome!</h1>
+                <p class="description" style="margin-top:50px">Control Data Center of Rumah Kesejahteraan Indonesia (RKI) The first step towards success is through this gateway. Together, we will forge new achievements and realize dreams. Enter your credentials and let's embark on a journey towards boundless progress and innovation.</p>
+            </div>
 
-                <label style="text-align: right" for="username">Username</label>
-                <input type="text" placeholder="User ID" id="username" name="username">
+            <div class="col-md-3"></div>
+            
+            <div class="col-md-3 text-right" style="margin-top:150px">
+                <form method="POST" action="cek_login.php">
+                    <h2 class="text-right login">Login to your account</h2>
+                    <hr class="line-text">
 
-                <label style="text-align: right" for="password">Password</label>
-                <input type="password" placeholder="Password" id="password" name="password">
+                    <br><br>
 
-                <button class="login" type="submit">Log In</button>
-            </form>
-        </div>
-    </div>
+                    <div class="form-group text-right">
+                        <label class="text-right formlogin" for="username">Username</label><br>
+                        <input type="text" class="type field" id="username" name="username" placeholder="User ID">
+                    </div>
+
+                    <br>
+
+                    <div class="form-group text-right">
+                        <label class="formlogin" style="text-align= right" for="password">Password</label><br>
+                        <input type="password" class="type field" id="password" name="password" placeholder="Password">
+                    </div>
+
+                    <br>
+
+                    <button class="btnlogin" type="submit">Log In</button>
+                </form>
+            </div>
+    </div>       
+</div>
+
 </body>
+
 </html>
