@@ -29,7 +29,8 @@
         
             <div class="col-md-6 text-left" style="margin-top:100px">
                 <h1 class="welcoming">Welcome!</h1>
-                <p class="description" style="margin-top:50px">Control Data Center of Rumah Kesejahteraan Indonesia (RKI) The first step towards success is through this gateway. Together, we will forge new achievements and realize dreams. Enter your credentials and let's embark on a journey towards boundless progress and innovation.</p>
+                <p class="description" style="margin-top: 50px">Control Data Center of Rumah Kesejahteraan Indonesia (RKI) The first step towards success is through this gateway. Together, we will forge new achievements and realize dreams. Enter your credentials and let's embark on a journey towards boundless progress and innovation.</p>
+                <button class="btnlogin" onclick="window.location.href='https://www.rkicoop.co.id/'" style="width: 200px; margin-top: 50px; padding: 10px;">Company Profile</button>              
             </div>
 
             <div class="col-md-3"></div>
