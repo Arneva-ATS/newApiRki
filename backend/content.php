@@ -70,6 +70,10 @@ if($_GET['menu'] == 'tambah_kategori'){
     include "include/tambah_kategori.php";
 }
 
+if($_GET['menu'] == 'edit_kategori_barang'){
+    include "include/edit_kategori.php";
+}
+
 if($_GET['menu'] == 'edit_barang'){
     include "include/edit_barang.php";
 }

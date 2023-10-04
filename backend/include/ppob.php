@@ -34,7 +34,7 @@
                                         <tr>
                                             <td> <?php echo $data['id'];?> </td>
                                             <td> <?php echo $data['nama'];?> </td>
-                                            <td> <?php echo $data['gambar'];?> </td>
+                                            <td> <img src="<?php echo $data['gambar'];?>" width="100"> </td>
                                         </tr>
                                       
                                     </tbody>

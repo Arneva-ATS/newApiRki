@@ -34,7 +34,7 @@
                                         <tr>
                                             <td> <?php echo $data['kode_kategori'];?> </td>
                                             <td> <?php echo $data['nama_kategori'];?> </td>
-                                            <td> <a href="aksi.php?act=hapus_kategori_barang&id=<?php echo $data['id'];?>" class="btn btn-danger" onclick="return confirm('Yakin Mau Hapus ??')"> Hapus </a> </td>
+                                            <td> <a href="?menu=edit_kategori_barang&id=<?php echo $data['id'];?>" class="btn btn-warning"> Edit </a> <a href="aksi.php?act=hapus_kategori_barang&id=<?php echo $data['id'];?>" class="btn btn-danger" onclick="return confirm('Yakin Mau Hapus ??')"> Hapus </a> </td>
                                         </tr>
                                       <?php } ?>
                                     </tbody>
