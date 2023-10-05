@@ -16,7 +16,11 @@
     
     $id=$data['id'];
     $jumlah=$data['jumlah'];
-    $hhh =  floor($jumlah * $data['harga']);
+   
+    $qq  = mysqli_fetch_array(mysqli_query($koneksi,"select * from cart where id = '".$id."'")); 
+
+    $hhh =  floor($jumlah * $qq['harga_asli']);
+
     $q=mysqli_query($koneksi,"update cart set jumlah = '".$jumlah."', harga = '".$hhh."' where id = '".$id."'");
     
     if($q){
@@ -24,7 +28,7 @@
         echo json_encode(
             array(
                 'response_code' => 200,
-                'message' => json_encode($data)
+                'message' => 'Berhasil Update Data!'
             )
             );
     }
