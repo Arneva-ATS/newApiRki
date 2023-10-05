@@ -21,7 +21,7 @@
                         )
                     );
                 }else{
-                    mysqli_query($koneksi,"insert into cart(kode_barang,nama_barang,stok,harga,photo, keterangan, id_kategori, id_koperasi, session_id)values('".$data['kode_barang']."','".$data['nama_barang']."','".$data['stok']."','".$data['harga']."','".$data['photo']."','".$cleartag."','".$data['id_kategori']."','".$data['id_koperasi']."','".$sesionid."')");
+                    mysqli_query($koneksi,"insert into cart(kode_barang,nama_barang,stok,harga, harga_asli,photo, keterangan, id_kategori, id_koperasi, session_id)values('".$data['kode_barang']."','".$data['nama_barang']."','".$data['stok']."','".$data['harga']."','".$data['harga']."','".$data['photo']."','".$cleartag."','".$data['id_kategori']."','".$data['id_koperasi']."','".$sesionid."')");
                     $ids = mysqli_insert_id($koneksi);
                     $sql2 = mysqli_query($koneksi,"select * from cart where session_id = '".$sesionid."'");
                         if($sql2){
