@@ -24,7 +24,7 @@
         echo json_encode(
             array(
                 'response_code' => 200,
-                'message' => 'Berhasil Update Data!'
+                'message' => json_encode($data)
             )
             );
     }
